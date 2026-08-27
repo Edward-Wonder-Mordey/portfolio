@@ -10,89 +10,9 @@
     <meta property="og:image" content="./images/image_1780825279152.jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="./images/image_1780825279152.jpeg" />
-    <style>
-      .project-case-link{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:.78rem;font-weight:700;text-decoration:none;letter-spacing:.02em}.project-case-link:hover{text-decoration:underline}.project-card.extra-case-study{border-style:solid}.case-study-note{margin-top:6px;font-size:.72rem;opacity:.68}
-    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      (() => {
-        const caseStudyBase = './case-studies.html';
-        const links = {
-          'PromisedLand Data Center': '#cloud',
-          'Eragonova Enterprise': '#enterprise',
-          'Linux Deployment Proposal': '#linux',
-          'Customer Support Mini-Suite': '#support'
-        };
-
-        function enhanceProjects() {
-          const grid = document.querySelector('.project-grid');
-          if (!grid) return false;
-
-          grid.querySelectorAll('.project-card').forEach((card) => {
-            const title = card.querySelector('h3')?.textContent?.trim();
-            if (!title || !links[title]) return;
-
-            const tags = card.querySelector('.tag-row');
-            if (title === 'Customer Support Mini-Suite' && tags) {
-              tags.innerHTML = ['SQL','Power BI','Tableau','Data analysis','Support operations']
-                .map((tag) => `<span>${tag}</span>`).join('');
-            }
-
-            let link = card.querySelector('.project-case-link');
-            if (!link) {
-              link = document.createElement('a');
-              link.className = 'project-case-link';
-              link.innerHTML = 'View Case Study <span>→</span>';
-              card.querySelector('.project-body')?.appendChild(link);
-            }
-            link.href = `${caseStudyBase}${links[title]}`;
-          });
-
-          const extras = [
-            {
-              number:'05', category:'Networking & security', title:'Network Fingerprinting & Security Assessment',
-              description:'A controlled Zenmap/Nmap exercise covering network discovery, OS fingerprinting, exposed services, and security analysis.',
-              tags:['Zenmap','Nmap','Network discovery','Security'], anchor:'#network'
-            },
-            {
-              number:'06', category:'Planning & leadership', title:'Stake Welfare & Self-Reliance Plan · 2026',
-              description:'A structured annual program plan demonstrating strategic planning, stakeholder coordination, measurable goals, and progress tracking.',
-              tags:['Strategic planning','Coordination','Goal setting','Reporting'], anchor:'#planning'
-            }
-          ];
-
-          extras.forEach((item) => {
-            if (grid.querySelector(`h3[data-case-title="${CSS.escape(item.title)}"]`)) return;
-            const card = document.createElement('article');
-            card.className = 'project-card extra-case-study';
-            card.innerHTML = `
-              <div class="project-top"><span class="project-number">${item.number}</span><span class="project-icon">↗</span></div>
-              <div class="project-body">
-                <p class="project-category">${item.category}</p>
-                <h3 data-case-title="${item.title}">${item.title}</h3>
-                <p class="project-description">${item.description}</p>
-                <div class="tag-row">${item.tags.map((tag) => `<span>${tag}</span>`).join('')}</div>
-                <a class="project-case-link" href="${caseStudyBase}${item.anchor}">View Case Study <span>→</span></a>
-              </div>
-            `;
-            grid.appendChild(card);
-          });
-
-          return true;
-        }
-
-        // React renders asynchronously. Check briefly until the project grid exists,
-        // then stop. This avoids a long-lived MutationObserver watching the entire DOM.
-        let attempts = 0;
-        function init() {
-          if (enhanceProjects() || attempts++ > 30) return;
-          requestAnimationFrame(init);
-        }
-        requestAnimationFrame(init);
-      })();
-    </script>
   </body>
 </html>
