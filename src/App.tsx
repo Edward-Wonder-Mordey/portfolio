@@ -169,7 +169,7 @@ function App() {
     <div className="site-shell">
       <header className="site-header">
         <a className="brand" href="#top" onClick={closeMenu} aria-label="Edward Wonder Mordey home">
-          <img src="/images/image_1780825279152.jpeg" alt="Eragonova Enterprise crest" />
+          <img src="./images/image_1780825279152.jpeg" alt="Eragonova Enterprise crest" />
           <span>Edward Wonder<br /><b>Mordey</b></span>
         </a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
@@ -198,7 +198,7 @@ function App() {
             <div className="hero-note"><span className="pulse-dot" /> Available for thoughtful collaborations</div>
           </div>
           <div className="hero-visual">
-            <div className="portrait-frame"><img src="/images/IMG-20260626-WA0013.jpg.jpeg" alt="Edward Wonder Mordey" /></div>
+            <div className="portrait-frame"><img src="./images/IMG-20260626-WA0013.jpg.jpeg" alt="Edward Wonder Mordey" /></div>
             <div className="hero-card hero-card-top"><span>Based in</span><strong>Kumasi, Ghana</strong></div>
             <div className="hero-card hero-card-bottom"><strong>4.0 / 4.0</strong><span>Ensign College GPA</span></div>
             <div className="hero-stamp">EWM<br /><small>EST. 2026</small></div>
@@ -274,7 +274,7 @@ function App() {
         <section className="contact-section section-wrap" id="contact"><div className="contact-panel"><div className="contact-copy"><p className="eyebrow"><span className="eyebrow-line" /> Open to what&apos;s next</p><h2>Let&apos;s make something<br /><em>worth building.</em></h2><p>Have a systems challenge, a community idea, or a thoughtful project in mind? I&apos;d like to hear about it.</p></div><div className="contact-actions"><a href="mailto:edwardwondermordey@gmail.com" className="contact-link"><Mail size={18} /> edwardwondermordey@gmail.com <ArrowUpRight size={16} /></a><a href="tel:+233505374537" className="contact-link"><BriefcaseBusiness size={18} /> +233 50 537 4537 <ArrowUpRight size={16} /></a><a href="https://linkedin.com/in/edward-wonder-mordey-0532822b7" target="_blank" rel="noreferrer" className="contact-link"><Globe size={18} /> LinkedIn profile <ExternalLink size={15} /></a></div></div></section>
       </main>
 
-      <footer className="site-footer section-wrap"><div className="footer-brand"><img src="/images/image_1780825279152.jpeg" alt="Eragonova Enterprise crest" /><span>Edward Wonder Mordey</span></div><p>IT · Engineering · Service</p><div className="footer-social"><a href="https://linkedin.com/in/edward-wonder-mordey-0532822b" aria-label="LinkedIn"><Globe size={17} /></a><a href="mailto:edwardwondermordey@gmail.com" aria-label="Email"><Mail size={17} /></a><a href="https://github.com/Edward-Wonder-Mordey" aria-label="GitHub"><GitBranch size={17} /></a></div><small>© 2026 Edward Wonder Mordey. Built with purpose.</small></footer>
+      <footer className="site-footer section-wrap"><div className="footer-brand"><img src="./images/image_1780825279152.jpeg" alt="Eragonova Enterprise crest" /><span>Edward Wonder Mordey</span></div><p>IT · Engineering · Service</p><div className="footer-social"><a href="https://linkedin.com/in/edward-wonder-mordey-0532822b" aria-label="LinkedIn"><Globe size={17} /></a><a href="mailto:edwardwondermordey@gmail.com" aria-label="Email"><Mail size={17} /></a><a href="https://github.com/Edward-Wonder-Mordey" aria-label="GitHub"><GitBranch size={17} /></a></div><small>© 2026 Edward Wonder Mordey. Built with purpose.</small></footer>
     </div>
   );
 }
