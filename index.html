@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpeg" href="./images/image_1780825279152.jpeg" />
     <link rel="apple-touch-icon" href="./images/image_1780825279152.jpeg" />
+    <link rel="preload" as="image" href="./images/IMG-20260626-WA0013.jpg.jpeg" fetchpriority="high" />
     <title>Edward Wonder Mordey Portfolio</title>
     <meta property="og:image" content="./images/image_1780825279152.jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,7 +29,7 @@
 
         function enhanceProjects() {
           const grid = document.querySelector('.project-grid');
-          if (!grid) return;
+          if (!grid) return false;
 
           grid.querySelectorAll('.project-card').forEach((card) => {
             const title = card.querySelector('h3')?.textContent?.trim();
@@ -79,13 +80,18 @@
             `;
             grid.appendChild(card);
           });
+
+          return true;
         }
 
-        const observer = new MutationObserver(enhanceProjects);
-        observer.observe(document.getElementById('root'), { childList:true, subtree:true });
-        window.addEventListener('load', enhanceProjects);
-        setTimeout(enhanceProjects, 300);
-        setTimeout(enhanceProjects, 1000);
+        // React renders asynchronously. Check briefly until the project grid exists,
+        // then stop. This avoids a long-lived MutationObserver watching the entire DOM.
+        let attempts = 0;
+        function init() {
+          if (enhanceProjects() || attempts++ > 30) return;
+          requestAnimationFrame(init);
+        }
+        requestAnimationFrame(init);
       })();
     </script>
   </body>
