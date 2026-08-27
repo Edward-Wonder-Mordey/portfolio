@@ -27,15 +27,26 @@
 .academic-redesign .credential-item h3 { font-size:16px; margin:6px 0; }
 .academic-redesign .credential-item p { font-size:11px; line-height:1.5; }
 .academic-redesign .transcript-block { border:0; margin:0; }
-.academic-transcript-list details { border:1px solid var(--line); border-bottom:0; background:#f8f6f1; }
-.academic-transcript-list details:last-child { border-bottom:1px solid var(--line); }
-.academic-transcript-list summary { padding:19px 22px; display:grid; grid-template-columns:1fr auto; gap:20px; }
-.academic-transcript-list summary strong { font-size:13px; font-weight:600; }
-.academic-transcript-list summary span { color:var(--amber); font:10px 'DM Mono',monospace; text-align:right; }
-.academic-transcript-list details[open] summary { background:var(--navy); color:white; }
+
+/* Semester transcript redesign: the semester itself is the card; the triangle is only the control. */
+.academic-transcript-list { display:grid; gap:14px; }
+.academic-transcript-list details { border:1px solid #dedbd3; background:#f6f3ed; overflow:hidden; transition:border-color .2s ease, box-shadow .2s ease; }
+.academic-transcript-list details:hover { border-color:#c9c4b9; }
+.academic-transcript-list details[open] { border-color:#c7a15d; box-shadow:0 12px 28px rgba(20,35,53,.07); }
+.academic-transcript-list summary { list-style:none; cursor:pointer; padding:0; display:grid; grid-template-columns:1fr auto; align-items:stretch; min-height:92px; }
+.academic-transcript-list summary::-webkit-details-marker { display:none; }
+.academic-transcript-list summary::after { content:'›'; width:62px; display:grid; place-items:center; border-left:1px solid #dedbd3; color:#858b8d; font-size:27px; font-weight:300; transform:rotate(0deg); transition:transform .2s ease, background .2s ease, color .2s ease; }
+.academic-transcript-list details[open] summary::after { transform:rotate(90deg); background:var(--amber); color:var(--ink); border-left-color:var(--amber); }
+.academic-transcript-list summary strong { display:flex; align-items:center; padding:22px 24px 4px; font-size:15px; font-weight:600; letter-spacing:-.01em; }
+.academic-transcript-list summary span { display:block; padding:0 24px 22px; color:#8a6a32; font:10px 'DM Mono',monospace; letter-spacing:.04em; }
+.academic-transcript-list details[open] summary { background:var(--navy); }
+.academic-transcript-list details[open] summary strong { color:white; }
 .academic-transcript-list details[open] summary span { color:var(--amber); }
-.academic-transcript-list ul { list-style:none; margin:0; padding:7px 22px 19px; display:grid; grid-template-columns:repeat(2,1fr); gap:0 30px; }
-.academic-transcript-list li { padding:10px 0; border-bottom:1px solid #e4e1d9; color:#5f6872; font-size:11px; line-height:1.45; }
+.academic-transcript-list ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; background:#fbfaf7; }
+.academic-transcript-list li { min-height:62px; padding:13px 22px; border-top:1px solid #e5e1d8; color:#5f6872; font-size:11px; line-height:1.45; display:flex; align-items:center; }
+.academic-transcript-list li:nth-child(odd) { border-right:1px solid #e5e1d8; }
+.academic-transcript-list li::first-line { color:var(--ink); }
+
 .current-record-card { background:var(--navy); color:white; padding:28px; box-shadow:0 16px 32px rgba(20,35,53,.08); }
 .record-header { display:flex; align-items:flex-start; justify-content:space-between; gap:30px; padding-bottom:24px; border-bottom:1px solid #334354; }
 .record-header > div:first-child span { color:#91a0ad; text-transform:uppercase; letter-spacing:.09em; font:9px 'DM Mono',monospace; }
@@ -65,19 +76,27 @@
   .academic-stat-grid > div:nth-child(3) { padding-left:0; }
   .academic-stat-grid > div:nth-child(4) { padding-left:20px; }
   .academic-transcript-list ul { grid-template-columns:1fr; }
+  .academic-transcript-list li:nth-child(odd) { border-right:0; }
   .record-header { flex-direction:column; }
   .record-metrics { text-align:left; }
   .grade-table-head, .grade-row { grid-template-columns:75px 1fr 45px 45px; gap:8px; }
   .grade-table-head { font-size:8px; }
   .grade-row span { font-size:10px; }
   .academic-redesign .credential-item { padding:20px 16px; }
+  .academic-transcript-list summary::after { width:52px; }
+  .academic-transcript-list summary strong { padding-left:18px; }
+  .academic-transcript-list summary span { padding-left:18px; }
 }
 @media (max-width:440px) {
   .academic-stat-grid { grid-template-columns:1fr; }
   .academic-stat-grid > div, .academic-stat-grid > div:not(:first-child) { padding:17px 0; border-right:0; border-top:1px solid var(--line); }
   .academic-stat-grid > div:first-child { border-top:0; }
-  .academic-transcript-list summary { grid-template-columns:1fr; gap:8px; }
-  .academic-transcript-list summary span { text-align:left; }
+  .academic-transcript-list summary { min-height:84px; }
+  .academic-transcript-list summary strong { font-size:13px; }
+  .academic-transcript-list summary span { font-size:9px; }
+  .academic-transcript-list summary::after { width:46px; }
+  .academic-transcript-list li { padding:12px 16px; font-size:10px; }
+  .academic-transcript-list ul { grid-template-columns:1fr; }
   .current-record-card { padding:18px 12px; }
   .grade-table-head, .grade-row { grid-template-columns:65px 1fr 42px; }
   .grade-table-head span:last-child, .grade-row small { display:none; }
