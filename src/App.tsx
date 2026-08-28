@@ -41,6 +41,50 @@ const diplomaSemesters = [
   ['Year 2 · Semester 2 · 2024/2025','GPA: 3.13 · CGPA: 3.84',['DEE208 Digital Electronics — B (74)','DEE222 Control Systems — B+ (76)','DEE232 Electrical Machines III — C (60)','DEE244 Electrical Engineering Lab V — C (63)','DEE246 Electrical Engineering Lab VI — C (60)','MAT212 Engineering Mathematics IV — B (70)','ETP202 Entrepreneurship — A+ (88)','DEE242 Power Systems II — D (52)']],
 ];
 
+const ensignSemesters = [
+  ['Spring 2024','4/22/2024 – 7/24/2024','4.000','4.000',[
+    ['CS104','Python Scripting','3.00','A','12.00'],
+    ['IT125','Introduction to Information Technology','3.00','A','12.00'],
+  ]],
+  ['Fall 2024','9/16/2024 – 12/18/2024','4.000','4.000',[
+    ['IT235','Cloud Server Administration','3.00','A','12.00'],
+    ['IT255','Networking Fundamentals','3.00','A','12.00'],
+  ]],
+  ['2025 · Term 1','1/06/2025 – 2/22/2025','4.000','4.000',[
+    ['IT143','Database Design and Analysis','3.00','A','12.00'],
+  ]],
+  ['2025 · Term 3','5/05/2025 – 6/21/2025','4.000','4.000',[
+    ['IT210','Linux Fundamentals','3.00','A','12.00'],
+  ]],
+  ['2025 · Term 4','6/30/2025 – 8/16/2025','4.000','4.000',[
+    ['IT350','Network Configuration & Design','3.00','A','12.00'],
+  ]],
+  ['2025 · Term 5','9/01/2025 – 10/18/2025','4.000','4.000',[
+    ['IT312','Cybersecurity Foundations','3.00','A','12.00'],
+  ]],
+  ['2025 · Term 6','10/27/2025 – 12/13/2025','4.000','4.000',[
+    ['IT316','Scripting for Security Operations','3.00','A','12.00'],
+  ]],
+  ['2026 · Block 1','1/05/2026 – 2/21/2026','4.000','4.000',[
+    ['IT160','Cloud Computing Essentials','3.00','A','12.00'],
+  ]],
+  ['2026 · Block 2','3/02/2026 – 4/18/2026','4.000','4.000',[
+    ['IT330','Azure Technologies','3.00','A','12.00'],
+  ]],
+  ['2026 · Block 3','5/04/2026 – 6/20/2026','4.000','4.000',[
+    ['ENG101','Introduction to College Writing','3.00','A','12.00'],
+    ['GS170','Career Development','1.00','A','4.00'],
+    ['IT335','AWS Cloud Practitioner','3.00','A','12.00'],
+  ]],
+  ['2026 · Block 4','6/29/2026 – 8/15/2026','4.000','4.000',[
+    ['BAP115','Excel and Introduction to Technology','1.00','A','4.00'],
+    ['COMM122','Interpersonal Communications','3.00','A','12.00'],
+    ['ENG301','Technical Writing','3.00','A','12.00'],
+    ['IT340','Business Intelligence Systems','3.00','A','12.00'],
+    ['IT497','IT Capstone','1.50','A','6.00'],
+  ]],
+];
+
 const topUpSemester = [
   ['MATH213','Transform and Boundary Values Problem','C','64'],
   ['BEEE223','Analog Communication Systems','B+','79'],
@@ -99,8 +143,9 @@ function App() {
       <section className="education-section section-wrap academic-redesign" id="academics"><div className="section-label"><span>05</span><span>Academic profile</span></div><div className="academic-hero"><div><p className="academic-kicker">Education · Credentials · Transcript</p><h2>Study with <em>purpose.</em></h2><p>My academic record brings together my primary IT discipline, engineering foundation, professional certificates, and the semester results behind them.</p></div><div className="academic-gpa-card"><span>Primary discipline</span><strong>4.0 / 4.0</strong><b>Ensign College GPA</b><small>Bachelor of Applied Science in System Administration · Final Year</small></div></div>
         <div className="academic-stat-grid"><div><span>Primary degree</span><strong>BAS · System Administration</strong><small>Ensign College · Final Year</small></div><div><span>Engineering</span><strong>B.Eng. · Level 300</strong><small>KsTU · top-up on resumption</small></div><div><span>Completed</span><strong>3.84 CGPA</strong><small>Diploma · Second Class Upper</small></div><div><span>Current engineering record</span><strong>3.6750</strong><small>20 credits · 73.5 grade points</small></div></div>
         <div className="academic-credentials"><div className="academic-heading"><span>01</span><div><h3>Credentials at a glance</h3><p>The qualifications and records that define the academic foundation of my professional journey.</p></div></div><div className="credential-list"><div className="credential-item"><GraduationCap size={25}/><div><span>Current · 4.0 / 4.0</span><h3>Bachelor of Applied Science in System Administration</h3><p>Ensign College · Final Year</p></div><ChevronDown size={18}/></div><div className="credential-item"><Award size={25}/><div><span>Completed · December 2025</span><h3>Diploma in Electrical & Electronic Engineering</h3><p>Kumasi Technical University · Final CGPA 3.84 · Second Class Upper Division</p></div><ChevronDown size={18}/></div><div className="credential-item"><Cpu size={25}/><div><span>Current · Level 300 on resumption</span><h3>B.Eng. Electrical & Electronics Engineering top-up</h3><p>Kumasi Technical University · Progressing from Level 2 · Current recorded CGPA 3.6750</p></div><ChevronDown size={18}/></div><div className="credential-item"><Check size={25}/><div><span>Professional certificates</span><h3>IT Professional · Technical Support Engineer · PathwayConnect</h3><p>TestOut Network Pro · Hybrid Server Pro · Client Pro</p></div><ChevronDown size={18}/></div></div></div>
-        <div className="academic-transcripts"><div className="academic-heading"><span>02</span><div><h3>Diploma · semester-by-semester record</h3><p>Detailed grades from the completed Electrical & Electronic Engineering diploma.</p></div></div><div className="transcript-block academic-transcript-list">{diplomaSemesters.map(([title,summary,courses])=><details key={title}><summary><strong>{title}</strong><span>{summary}</span></summary><ul>{courses.map(c=><li key={c}>{c}</li>)}</ul></details>)}</div></div>
-        <div className="academic-current"><div className="academic-heading"><span>03</span><div><h3>Current B.Eng. record</h3><p>The latest semester record remains clearly identified as the Level 2 Semester 1 results; the programme status now reflects Level 300 on resumption.</p></div></div><div className="current-record-card"><div className="record-header"><div><span>2025/2026 · Level 2 · Semester 1</span><h3>9 courses · 20 credits</h3></div><div className="record-metrics"><strong>3.6750</strong><small>GPA / CGPA</small><b>73.5</b><small>grade points</small></div></div><div className="grade-table"><div className="grade-table-head"><span>Course</span><span>Course title</span><span>Grade</span><span>Mark</span></div>{topUpSemester.map(([code,name,grade,mark])=><div className="grade-row" key={code}><strong>{code}</strong><span>{name}</span><b className={`grade-badge grade-${grade.replace('+','plus')}`}>{grade}</b><small>{mark}%</small></div>)}</div></div></div>
+        <div className="academic-ensign"><div className="academic-heading"><span>02</span><div><h3>Ensign College · Transcript history</h3><p>Semester-by-semester record from the official transcript, including course codes, grades, credits, quality points, and term GPA. Cumulative credit totals are intentionally omitted from the portfolio summary.</p></div></div><div className="ensign-transcript-list">{ensignSemesters.map(([term,date,gpa,cum,courses])=><details key={term}><summary><div className="ensign-summary-main"><strong>{term}</strong><span>{date}</span></div><div className="ensign-summary-gpa"><b>{gpa}</b><small>Term GPA</small><span>{cum} cumulative GPA</span></div><span className="ensign-arrow" aria-hidden="true">›</span></summary><div className="ensign-table"><div className="ensign-table-head"><span>Course</span><span>Course description</span><span>Credits</span><span>Grade</span><span>Quality points</span></div>{courses.map(([code,description,credits,grade,points])=><div className="ensign-table-row" key={code}><strong>{code}</strong><span>{description}</span><span>{credits}</span><b>{grade}</b><span>{points}</span></div>)}</div></details>)}</div><div className="ensign-awards"><div><span>Awarded</span><strong>12/18/2024</strong><p>Certificate · Technical Support Engineer</p></div><div><span>Awarded</span><strong>2/21/2026</strong><p>Certificate · IT Professional</p></div></div></div>
+        <div className="academic-transcripts"><div className="academic-heading"><span>03</span><div><h3>Diploma · semester-by-semester record</h3><p>Detailed grades from the completed Electrical & Electronic Engineering diploma.</p></div></div><div className="transcript-block academic-transcript-list">{diplomaSemesters.map(([title,summary,courses])=><details key={title}><summary><strong>{title}</strong><span>{summary}</span></summary><ul>{courses.map(c=><li key={c}>{c}</li>)}</ul></details>)}</div></div>
+        <div className="academic-current"><div className="academic-heading"><span>04</span><div><h3>Current B.Eng. record</h3><p>The latest semester record remains clearly identified as the Level 2 Semester 1 results; the programme status now reflects Level 300 on resumption.</p></div></div><div className="current-record-card"><div className="record-header"><div><span>2025/2026 · Level 2 · Semester 1</span><h3>9 courses · 20 credits</h3></div><div className="record-metrics"><strong>3.6750</strong><small>GPA / CGPA</small><b>73.5</b><small>grade points</small></div></div><div className="grade-table"><div className="grade-table-head"><span>Course</span><span>Course title</span><span>Grade</span><span>Mark</span></div>{topUpSemester.map(([code,name,grade,mark])=><div className="grade-row" key={code}><strong>{code}</strong><span>{name}</span><b className={`grade-badge grade-${grade.replace('+','plus')}`}>{grade}</b><small>{mark}%</small></div>)}</div></div></div>
         <div className="academic-note"><Award size={20}/><div><strong>Academic direction</strong><p>System Administration is my primary professional discipline. Electrical & Electronic Engineering strengthens that path with an additional foundation in physical systems, electronics, power, and engineering problem-solving.</p></div></div>
       </section>
 
