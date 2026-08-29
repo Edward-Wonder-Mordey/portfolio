@@ -1,0 +1,174 @@
+/* Editorial brochure treatment for Faith & Growth — presentation only; all wording stays in App.tsx. */
+.growth-section {
+  position: relative;
+  isolation: isolate;
+  padding-top: 118px;
+  padding-bottom: 128px;
+}
+
+.growth-section::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 82% 32%, rgba(216,153,52,.10), transparent 25%),
+    radial-gradient(circle at 18% 78%, rgba(20,35,53,.045), transparent 24%),
+    linear-gradient(180deg, #fbfaf7 0%, #f6f1e7 52%, #fbfaf7 100%);
+}
+
+.growth-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 265px;
+  right: -18vw;
+  width: 62vw;
+  height: 560px;
+  opacity: .38;
+  pointer-events: none;
+  background:
+    linear-gradient(145deg, transparent 0 38%, rgba(216,153,52,.10) 38.2% 38.6%, transparent 38.8%),
+    linear-gradient(158deg, transparent 0 47%, rgba(20,35,53,.06) 47.2% 47.6%, transparent 47.8%),
+    linear-gradient(171deg, transparent 0 57%, rgba(216,153,52,.08) 57.2% 57.6%, transparent 57.8%);
+  clip-path: polygon(15% 100%, 33% 65%, 45% 72%, 58% 43%, 71% 59%, 84% 27%, 100% 45%, 100% 100%);
+}
+
+.growth-section > .section-label { margin-bottom: 14px; }
+.growth-section .education-grid {
+  grid-template-columns: minmax(250px, .72fr) minmax(420px, 1.28fr);
+  gap: 82px;
+  margin-top: 30px;
+  align-items: start;
+}
+.growth-section .education-grid > div:first-child { position: sticky; top: 32px; }
+.growth-section .education-grid > div:first-child h2 { font-size: clamp(48px, 5.2vw, 76px); line-height: .98; max-width: 520px; }
+.growth-section .education-grid > div:first-child h2 em { display: inline-block; margin-top: 4px; }
+.growth-section .education-grid > div:first-child h2::after { content: ''; display: block; width: 45px; height: 2px; background: var(--amber); margin: 28px 0 24px; }
+.growth-section .education-grid > div:first-child p { max-width: 315px; margin-bottom: 22px; color: #59626c; font-size: 13px; line-height: 1.75; }
+.growth-section .education-grid > .about-copy { max-width: none; padding-top: 0; display: grid; gap: 12px; }
+.growth-section .education-grid > .about-copy p {
+  position: relative;
+  margin: 0;
+  max-width: none;
+  min-height: 92px;
+  padding: 24px 30px 24px 72px;
+  display: flex;
+  align-items: center;
+  color: #4f5862;
+  font-size: 13px;
+  line-height: 1.7;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(217,216,210,.82);
+  border-radius: 12px;
+  box-shadow: 0 9px 24px rgba(20,35,53,.055);
+  backdrop-filter: blur(5px);
+}
+.growth-section .education-grid > .about-copy p::before {
+  content: '✦';
+  position: absolute;
+  left: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: var(--amber);
+  font-size: 17px;
+  border: 1px solid rgba(216,153,52,.28);
+  border-radius: 50%;
+  background: rgba(216,153,52,.06);
+}
+.growth-section .education-grid > .about-copy p:nth-child(2)::before { content: '♧'; }
+.growth-section .education-grid > .about-copy p:nth-child(3)::before { content: '✧'; }
+.growth-section .education-grid > .about-copy .lead { color: #283442; font-size: 13px; line-height: 1.7; }
+
+.growth-section .quote-card {
+  position: relative;
+  max-width: none;
+  min-height: 210px;
+  margin-top: 48px;
+  padding: 36px 42% 32px 34px;
+  border: 1px solid rgba(217,216,210,.75);
+  border-left: 2px solid var(--amber);
+  border-radius: 10px;
+  background: radial-gradient(circle at 84% 78%, rgba(216,153,52,.10), transparent 22%), linear-gradient(135deg, rgba(255,255,255,.88), rgba(246,241,231,.88));
+  box-shadow: 0 15px 35px rgba(20,35,53,.055);
+  overflow: hidden;
+}
+.growth-section .quote-card::after { content: '❧'; position: absolute; right: 54px; bottom: -12px; color: rgba(216,153,52,.13); font: 150px/1 'Playfair Display', serif; transform: rotate(-12deg); }
+.growth-section .quote-card svg { width: 30px; height: 30px; color: var(--amber); margin-bottom: 4px; }
+.growth-section .quote-card p { position: relative; z-index: 1; margin: 0; color: var(--ink); font-size: 18px; line-height: 1.5; }
+.growth-section .quote-card p::after { content: '— Edward Wonder Mordey  ·  Professional Growth Portfolio'; display: block; margin-top: 15px; color: var(--amber); font: 500 10px/1.5 'DM Mono', monospace; letter-spacing: .04em; }
+
+.growth-section .transcript-block {
+  position: relative;
+  margin-top: 20px;
+  padding: 30px 34px;
+  background: rgba(255,255,255,.66);
+  border: 1px solid rgba(217,216,210,.78);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(20,35,53,.04);
+}
+.growth-section .transcript-block + .transcript-block { margin-top: 16px; }
+.growth-section .transcript-block > h3 { margin: 0 0 18px; color: var(--ink); font-size: 18px; letter-spacing: -.02em; }
+.growth-section .transcript-block details { border-top: 1px solid rgba(217,216,210,.78); margin: 0; }
+.growth-section .transcript-block details:first-of-type { border-top: 0; }
+.growth-section .transcript-block summary { min-height: 52px; padding: 15px 8px 15px 28px; display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 14px; align-items: center; color: var(--ink); }
+.growth-section .transcript-block summary::before { left: 6px; top: 50%; transform: translateY(-50%); color: var(--amber); font-size: 13px; }
+.growth-section .transcript-block details[open] > summary::before { transform: translateY(-50%) rotate(90deg); }
+.growth-section .transcript-block summary strong { font-size: 13px; letter-spacing: -.01em; }
+.growth-section .transcript-block summary span { color: #a06f1c; font: 10px 'DM Mono', monospace; letter-spacing: .02em; }
+.growth-section .transcript-block details > p { margin: 0 12px 15px 28px; padding: 0 0 4px; color: #626b74; font-size: 11px; line-height: 1.7; }
+.growth-section .transcript-block details[open] > p { padding-bottom: 12px; }
+.growth-section .transcript-block details[open] > .about-copy { max-width: none; padding: 12px 16px 22px 28px; color: #59636d; font-size: 12px; line-height: 1.8; column-count: 2; column-gap: 44px; }
+.growth-section .transcript-block details[open] > .about-copy h3,
+.growth-section .transcript-block details[open] > .about-copy ul { break-inside: avoid; }
+.growth-section .transcript-block details[open] > .about-copy h3 { margin: 22px 0 9px; color: var(--ink); font-size: 13px; letter-spacing: -.01em; }
+.growth-section .transcript-block details[open] > .about-copy h3:first-child { margin-top: 0; }
+.growth-section .transcript-block details[open] > .about-copy p { margin-bottom: 15px; }
+.growth-section .transcript-block details[open] > .about-copy p:first-of-type::first-letter { float: left; padding: 5px 9px 0 0; color: var(--amber); font: 600 43px/.78 'Playfair Display', serif; }
+.growth-section .transcript-block details[open] > .about-copy ul { margin: 0 0 15px; padding-left: 17px; }
+.growth-section .transcript-block details[open] > .about-copy li { margin-bottom: 8px; padding-left: 4px; }
+
+.growth-section .transcript-block:last-child details summary { grid-template-columns: 1fr auto; }
+.growth-section .transcript-block:last-child details summary strong { display: inline-flex; align-items: baseline; gap: 10px; }
+.growth-section .transcript-block:last-child details summary strong::before { content: ''; width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; background: rgba(216,153,52,.08); border: 1px solid rgba(216,153,52,.18); box-shadow: inset 0 0 0 6px rgba(255,255,255,.72); }
+.growth-section .transcript-block:last-child details:nth-child(2) summary strong::before { box-shadow: inset 0 0 0 6px rgba(255,255,255,.72), 0 0 0 1px rgba(216,153,52,.1); }
+.growth-section .transcript-block:last-child details:nth-child(3) summary strong::before { background: rgba(20,35,53,.05); }
+.growth-section .transcript-block:last-child details:nth-child(4) summary strong::before { border-radius: 8px; }
+.growth-section .transcript-block:last-child details:nth-child(5) summary strong::before { transform: rotate(45deg); border-radius: 8px; }
+.growth-section .transcript-block:last-child details:nth-child(6) summary strong::before { box-shadow: inset 0 0 0 7px rgba(255,255,255,.72); }
+.growth-section .transcript-block:last-child details:nth-child(7) summary strong::before { background: rgba(216,153,52,.13); }
+.growth-section .transcript-block:last-child details:nth-child(8) summary strong::before { border-radius: 50% 50% 7px 7px; }
+.growth-section .transcript-block:last-child details:nth-child(9) summary strong::before { border-radius: 5px 14px 5px 14px; }
+.growth-section .transcript-block:last-child details:nth-child(10) summary strong::before { background: rgba(20,35,53,.06); }
+.growth-section .transcript-block:last-child details:nth-child(11) summary strong::before { border-radius: 50% 50% 50% 8px; }
+.growth-section .transcript-block:last-child details:nth-child(12) summary strong::before { background: rgba(216,153,52,.15); }
+
+@media (max-width: 900px) {
+  .growth-section .education-grid { grid-template-columns: 1fr; gap: 38px; }
+  .growth-section .education-grid > div:first-child { position: static; }
+  .growth-section .education-grid > div:first-child h2 { max-width: 650px; }
+  .growth-section .education-grid > .about-copy p { min-height: auto; }
+  .growth-section .quote-card { padding-right: 28%; }
+  .growth-section .transcript-block details[open] > .about-copy { column-count: 1; }
+}
+@media (max-width: 560px) {
+  .growth-section { padding-top: 82px; padding-bottom: 90px; }
+  .growth-section::after { opacity: .2; right: -42vw; width: 100vw; }
+  .growth-section .education-grid > div:first-child h2 { font-size: 46px; }
+  .growth-section .education-grid > .about-copy p { padding: 20px 20px 20px 63px; }
+  .growth-section .education-grid > .about-copy p::before { left: 20px; }
+  .growth-section .quote-card { padding: 28px 22px; min-height: 230px; }
+  .growth-section .quote-card::after { right: 4px; }
+  .growth-section .transcript-block { padding: 22px 16px; }
+  .growth-section .transcript-block summary { grid-template-columns: 1fr; gap: 4px; padding-right: 4px; }
+  .growth-section .transcript-block summary span { padding-left: 0; }
+  .growth-section .transcript-block details[open] > .about-copy { padding-left: 10px; padding-right: 10px; }
+}
