@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import {
   ArrowUpRight, Award, Check, ChevronDown, Cloud, Cpu, GraduationCap,
-  Github, Linkedin, Mail, Menu, Network, Quote, Server, ShieldCheck,
-  Sparkles, X,
+  Mail, Menu, Network, Quote, Server, ShieldCheck, Sparkles, X,
 } from 'lucide-react';
 import './index.css';
+
+const Github = ({ size = 17 }: { size?: number }) => <span style={{ fontSize: size, lineHeight: 1, fontWeight: 700 }} aria-hidden="true">◉</span>;
+const Linkedin = ({ size = 17 }: { size?: number }) => <span style={{ fontSize: size, lineHeight: 1, fontWeight: 700 }} aria-hidden="true">in</span>;
 
 type Project = {
   number: string; title: string; category: string; description: string;
