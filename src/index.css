@@ -134,6 +134,18 @@ h2 { font-size: clamp(44px, 5vw, 67px); margin: 0; }
 .footer-social a { transition: color .2s ease; }
 .footer-social a:hover { color: var(--amber); }
 .site-footer small { font-size: 9px; }
+
+/* Faith & Growth accordions: give the disclosure marker breathing room and a cleaner editorial feel. */
+.growth-section .transcript-block details { margin-bottom: 7px; }
+.growth-section .transcript-block summary { position: relative; display: block; list-style: none; cursor: pointer; padding: 4px 0 4px 18px; transition: color .2s ease, transform .2s ease; }
+.growth-section .transcript-block summary::-webkit-details-marker { display: none; }
+.growth-section .transcript-block summary::marker { content: ''; }
+.growth-section .transcript-block summary::before { content: '▸'; position: absolute; left: 1px; top: 5px; color: var(--amber); font-size: 10px; line-height: 1.4; transition: transform .2s ease; }
+.growth-section .transcript-block details[open] > summary::before { transform: rotate(90deg); }
+.growth-section .transcript-block summary:hover { color: var(--amber); }
+.growth-section .transcript-block summary:focus-visible { outline: 1px solid var(--amber); outline-offset: 4px; }
+.growth-section .transcript-block details > p { margin: 7px 0 12px 18px; color: #737b84; font-size: 11px; line-height: 1.6; }
+
 @media (max-width: 800px) {
   .section-wrap { width: min(100% - 44px, 600px); }
   .site-header { width: calc(100% - 44px); height: 74px; }
@@ -171,4 +183,5 @@ h2 { font-size: clamp(44px, 5vw, 67px); margin: 0; }
   .portrait-frame { height: 390px; }
   .project-card { min-height: 310px; }
   .credential-item h3 { font-size: 13px; }
+  .growth-section .transcript-block summary { padding-left: 20px; }
 }
