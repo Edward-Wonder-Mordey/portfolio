@@ -190,7 +190,12 @@ JOIN chinook.artist a ON atc.artistid = a.artistid
 ORDER BY ac.albumcount DESC, atc.totaltracks DESC;
 </code></pre><div class="evidence-links"><a href="./sql/chinook-catalog-counts.sql" download>Download SQL <span>↓</span></a></div></details>
         </div>
-        <h3>JFK aircraft usage: portfolio redesign</h3>
+        <h3>Community analysis with SQL</h3>
+<p>Another academic analysis project applied SQL to two fictional community datasets: MyFC player information and Planet Express transaction data. The work framed questions around stakeholder needs and used aggregate queries to turn raw records into decision-oriented summaries.</p>
+<div class="metric-grid"><div class="metric"><strong>350</strong><span>Players counted in the MyFC player dimension</span></div><div class="metric"><strong>199,768</strong><span>Highest monthly salary returned by the MyFC query</span></div><div class="metric"><strong>13,002.69</strong><span>Travel-Lodging total returned as the largest listed Planet Express category total</span></div></div>
+<div class="service-grid"><div class="service-card"><strong>MyFC analysis</strong><p>Used AVG, MAX, SUM, COUNT, ordering, and player identifiers to examine monthly salary data. The supplied project reports an average monthly salary of 102,342.957142857 and a total monthly salary result of 429,840,420.</p></div><div class="service-card"><strong>Planet Express analysis</strong><p>Used grouping and aggregation to compare transaction categories. Travel-Lodging, Internet Purchase, and Clothing Stores were the three largest category totals shown in the supplied results.</p></div></div>
+<div class="evidence"><strong>Interpretation note</strong><span class="note">These figures are preserved as reported in the submitted academic presentation and are not represented as independently re-executed results. The source identifies both datasets as fictional.</span></div>
+<h3>JFK aircraft usage: portfolio redesign</h3>
         <figure class="jfk-redesign">
           <a href="./images/data-analytics/jfk-aircraft-redesigned.png" target="_blank" rel="noopener noreferrer" aria-label="View redesigned JFK aircraft graphic full-size in a new tab"><img src="./images/data-analytics/jfk-aircraft-redesigned.png" alt="JFK aircraft usage: A320-232, 24,464 recorded flights; redesigned portfolio graphic based on the reported academic query result" loading="lazy" decoding="async"></a>
           <figcaption>A redesigned summary of the supplied result, using the full flight count and a clear model label. AI-assisted artwork; the aircraft illustration is decorative. Original Power BI report-development screenshots remain below.</figcaption>
@@ -228,7 +233,8 @@ ORDER BY ac.albumcount DESC, atc.totaltracks DESC;
 <div class="service-card"><strong>Security interpretation</strong><p>Used scan results as evidence for defensive review rather than treating discovery as an end in itself: exposed services, host roles, and operating-system information were considered in the context of hardening and monitoring.</p></div>
 </div>
 <div class="process"><div class="step"><b>01</b><span>Discover hosts</span></div><div class="step"><b>02</b><span>Scan ports</span></div><div class="step"><b>03</b><span>Fingerprint OS</span></div><div class="step"><b>04</b><span>Analyze services</span></div><div class="step"><b>05</b><span>Assess risk</span></div></div>
-<div class="metric-grid"><div class="metric"><strong>3</strong><span>Active hosts identified in the lab</span></div><div class="metric"><strong>Windows</strong><span>Operating-system fingerprint identified</span></div><div class="metric"><strong>135 · 139 · 445</strong><span>Windows/RPC/SMB-associated ports observed</span></div></div>
+<div class="metric-grid"><div class="metric"><strong>3</strong><span>Active hosts identified across 192.168.0.100–102</span></div><div class="metric"><strong>Windows 10</strong><span>1809–21H2 fingerprint reported for a scanned host</span></div><div class="metric"><strong>135 · 139 · 445</strong><span>TCP ports reported during the fingerprinting exercise</span></div></div>
+<div class="evidence"><strong>Original Zenmap evidence available</strong><span class="note">The submitted project documents a scan of 192.168.0.100–200 and includes three original Zenmap screenshots: Nmap output showing three responding hosts, the topology view, and Host Details for 192.168.0.100. The Host Details capture reports 1,000 scanned ports, 9 open ports, 991 closed ports, and a Microsoft Windows 10 1809–21H2 operating-system fingerprint.</span></div>
 
 <h3>02 · Dynamic routing &amp; redistribution</h3>
 <p>Configured and verified a Cisco Packet Tracer topology using EIGRP AS 100 internally and OSPF externally, with R3 operating at the routing boundary. The lab included route redistribution between the two protocols and end-to-end connectivity verification.</p>
@@ -245,8 +251,8 @@ ORDER BY ac.albumcount DESC, atc.totaltracks DESC;
 <div class="service-card"><strong>Network context</strong><p>The lab environment included the 172.16.3.0/24 subnet, gateway 172.16.3.1, domain controller 172.16.3.2, and the eggnogsoup.com training domain.</p></div>
 </div>
 
-<h3>04 · Linux auditing &amp; defensive administration</h3>
-<p>Configured and verified Linux <code>auditd</code> rules on Ubuntu to monitor authentication activity, file creation, sudo activity, password-related changes, and command execution. Rules were checked with <code>auditctl -l</code> and events queried with <code>ausearch</code>.</p>
+<h3>04 · Linux administration, connectivity &amp; auditing</h3>
+<p>Hands-on Ubuntu work included storage and filesystem administration, recursive file operations, interface inspection, and external connectivity testing. The supplied lab evidence shows partition/filesystem work, directory and backup operations, <code>ip a</code> output, and successful ICMP tests to 8.8.8.8. Separate security labs extended this administration work with <code>auditd</code> monitoring for authentication activity, file creation, sudo activity, password-related changes, and command execution; rules were checked with <code>auditctl -l</code> and queried with <code>ausearch</code>.</p>
 <div class="tags"><span class="tag">authlog</span><span class="tag">filecreate</span><span class="tag">sudolog</span><span class="tag">passwd_changes</span><span class="tag">exec_monitor</span></div>
 
 <h3>What I demonstrated</h3>
