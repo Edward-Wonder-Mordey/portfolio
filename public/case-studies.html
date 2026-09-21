@@ -19,6 +19,7 @@
 #presentation-design{scroll-margin-top:100px}.presentation-gallery{grid-template-columns:1fr 1fr}.presentation-gallery figure:first-child{grid-column:1/-1}.presentation-gallery img{height:auto;aspect-ratio:16/9;object-fit:contain}@media(max-width:500px){.presentation-gallery{grid-template-columns:1fr}}
 #technical-writing,#communication-development{scroll-margin-top:100px}
 .sql-example{margin:16px 0;padding:18px;background:#fff;border:1px solid var(--line)}.sql-example summary{cursor:pointer;font-weight:700}.sql-example pre{overflow:auto;max-width:100%;padding:18px;background:#172638;color:#f5f3ee;font-size:.8rem;line-height:1.6}.case-grid>div{min-width:0}
+.jfk-redesign{margin:24px 0;background:#fff;border:1px solid var(--line)}.jfk-redesign img{display:block;width:100%;height:auto}.jfk-redesign figcaption{padding:16px;font-size:.85rem;color:var(--muted)}.jfk-redesign a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 </style>
 </head>
 <body>
@@ -141,6 +142,11 @@ JOIN chinook.artist a ON atc.artistid = a.artistid
 ORDER BY ac.albumcount DESC, atc.totaltracks DESC;
 </code></pre><div class="evidence-links"><a href="./sql/chinook-catalog-counts.sql" download>Download SQL <span>↓</span></a></div></details>
         </div>
+        <h3>JFK aircraft usage: portfolio redesign</h3>
+        <figure class="jfk-redesign">
+          <a href="./images/data-analytics/jfk-aircraft-redesigned.png" target="_blank" rel="noopener noreferrer" aria-label="View redesigned JFK aircraft graphic full-size in a new tab"><img src="./images/data-analytics/jfk-aircraft-redesigned.png" alt="JFK aircraft usage: A320-232, 24,464 recorded flights; redesigned portfolio graphic based on the reported academic query result" loading="lazy" decoding="async"></a>
+          <figcaption>A redesigned summary of the supplied result, using the full flight count and a clear model label. AI-assisted artwork; the aircraft illustration is decorative. Original Power BI report-development screenshots remain below.</figcaption>
+        </figure>
         <h3>From SQL to Power BI and Tableau</h3>
         <p>I reused these analyses in Power BI and Tableau with small changes to the presentation. The screenshots below document Power BI report development; a Tableau export is not included in this evidence set.</p>
         <div class="metric-grid"><div class="metric"><strong>A320-232</strong><span>Most-used aircraft model in the supplied JFK result</span></div><div class="metric"><strong>24,464</strong><span>Recorded flights in that result, not a tail number</span></div></div>
