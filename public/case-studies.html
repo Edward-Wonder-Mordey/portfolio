@@ -21,6 +21,28 @@
 .sql-example{margin:16px 0;padding:18px;background:#fff;border:1px solid var(--line)}.sql-example summary{cursor:pointer;font-weight:700}.sql-example pre{overflow:auto;max-width:100%;padding:18px;background:#172638;color:#f5f3ee;font-size:.8rem;line-height:1.6}.case-grid>div{min-width:0}
 .jfk-redesign{margin:24px 0;background:#fff;border:1px solid var(--line)}.jfk-redesign img{display:block;width:100%;height:auto}.jfk-redesign figcaption{padding:16px;font-size:.85rem;color:var(--muted)}.jfk-redesign a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .enterprise-preview{margin:28px 0;background:#fff;border:1px solid var(--line);overflow:hidden}.enterprise-preview a,.enterprise-preview img{display:block;width:100%}.enterprise-preview img{height:auto}.enterprise-preview figcaption{padding:16px;display:flex;flex-direction:column;gap:4px}.enterprise-preview figcaption span{font-size:.84rem;color:var(--muted)}.enterprise-preview a:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}#enterprise{scroll-margin-top:100px}
+
+    /* Professional visual refresh · navy, azure and restrained gold */
+    :root{--ink:#10243a;--muted:#617286;--paper:#f6f8fb;--card:#fff;--line:#dbe3ec;--accent:#d89a32;--dark:#10243a;--blue:#1677e8;--blue-soft:#eaf4ff;--navy:#0d2035}
+    body{background:linear-gradient(180deg,#f8fbff 0,#f6f8fb 35%,#f7f5ef 100%);color:var(--ink)}
+    header{background:rgba(248,251,255,.9);box-shadow:0 8px 30px rgba(16,36,58,.05)}
+    .brand{color:var(--navy)}.back{transition:color .2s ease}.back:hover{color:var(--blue)}
+    .hero{position:relative}.hero:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(22,119,232,.13),transparent 70%);right:-120px;top:20px;pointer-events:none}
+    .eyebrow,.number{color:var(--accent)}.hero h1 em,.case h2 em{color:var(--blue)}
+    .toc a{background:#fff;border-color:#d6e1ec;box-shadow:0 5px 16px rgba(16,36,58,.04);transition:all .2s ease}.toc a:hover{background:var(--navy);border-color:var(--navy);color:#fff;transform:translateY(-2px)}
+    .case{position:relative}.case:nth-of-type(even){background:linear-gradient(90deg,rgba(234,244,255,.48),rgba(255,255,255,0))}
+    .case h2{color:var(--navy)}.case h3{color:#163a60}.case p,.case ul{color:#536579}
+    .tag{background:var(--blue-soft);border-color:#cfe3fa;color:#175d9e;font-weight:650;transition:all .2s ease}.tag:hover{background:#dceeff;border-color:#9dc8f3;transform:translateY(-1px)}
+    .process{gap:12px}.step{border-top:3px solid var(--blue);background:rgba(255,255,255,.62);padding:13px 10px 10px;border-radius:0 0 8px 8px}.step b{color:var(--accent)}
+    .metric{border-radius:10px;border-color:#dbe6f1;box-shadow:0 8px 24px rgba(16,36,58,.06)}.metric strong{color:var(--blue)}
+    .evidence{background:linear-gradient(135deg,#eef6ff,#fffaf0);border:1px solid #cfdfef;border-left:4px solid var(--accent);border-radius:10px;box-shadow:0 10px 30px rgba(16,36,58,.05)}
+    .evidence-links a,.button{background:linear-gradient(135deg,var(--navy),#174d7d);box-shadow:0 7px 18px rgba(16,36,58,.16);transition:all .2s ease}.evidence-links a:hover,.button:hover{background:linear-gradient(135deg,#146fcf,#1b8bf5);transform:translateY(-2px)}
+    figure img{transition:transform .35s ease,filter .35s ease}figure a:hover img{transform:scale(1.012);filter:saturate(1.06)}
+    .enterprise-preview,.jfk-redesign,.design-gallery figure{background:#fff;border:1px solid #dbe4ee;border-radius:12px;overflow:hidden;box-shadow:0 14px 38px rgba(16,36,58,.08)}
+    .enterprise-preview figcaption,.jfk-redesign figcaption,.design-gallery figcaption{padding:14px 16px}.enterprise-preview figcaption strong,.design-gallery figcaption strong{color:var(--navy)}
+    .service-card{border-radius:10px;border-color:#dce5ef;box-shadow:0 8px 24px rgba(16,36,58,.05);transition:transform .2s ease,box-shadow .2s ease}.service-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,36,58,.09)}
+    .footer{background:linear-gradient(180deg,transparent,rgba(234,244,255,.7))}
+    @media(max-width:760px){.hero:before{display:none}.case:nth-of-type(even){background:rgba(234,244,255,.28)}}
 </style>
 </head>
 <body>
