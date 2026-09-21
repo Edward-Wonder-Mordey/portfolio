@@ -18,6 +18,7 @@
   .analytics-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-gallery figcaption p{font-size:.85rem;margin:8px 0 0}.analytics-gallery img{height:260px;object-fit:contain}#support{scroll-margin-top:100px}@media(max-width:500px){.analytics-gallery{grid-template-columns:1fr}.analytics-gallery img{height:auto}}
 #presentation-design{scroll-margin-top:100px}.presentation-gallery{grid-template-columns:1fr 1fr}.presentation-gallery figure:first-child{grid-column:1/-1}.presentation-gallery img{height:auto;aspect-ratio:16/9;object-fit:contain}@media(max-width:500px){.presentation-gallery{grid-template-columns:1fr}}
 #technical-writing,#communication-development{scroll-margin-top:100px}
+.sql-example{margin:16px 0;padding:18px;background:#fff;border:1px solid var(--line)}.sql-example summary{cursor:pointer;font-weight:700}.sql-example pre{overflow:auto;max-width:100%;padding:18px;background:#172638;color:#f5f3ee;font-size:.8rem;line-height:1.6}.case-grid>div{min-width:0}
 </style>
 </head>
 <body>
@@ -57,7 +58,7 @@
             <a href="./images/data-analytics/airline-wind-results.png" target="_blank" rel="noopener noreferrer" aria-label="View Airline Windy-Weather Analysis full-size (opens in a new tab)">
               <img src="./images/data-analytics/airline-wind-results.png" alt="Airline Windy-Weather Analysis — SQL / DataGrip" loading="lazy" decoding="async">
             </a>
-            <figcaption><strong>Airline Windy-Weather Analysis</strong><span>SQL / DataGrip · Academic project</span><p>A ranked results table comparing windy-weather percentages by carrier. The wind threshold and percentage denominator must be documented alongside the SQL before drawing operational conclusions.</p></figcaption>
+            <figcaption><strong>Airline Windy-Weather Analysis</strong><span>SQL / DataGrip · Academic project</span><p>A ranked results table comparing windy-weather percentages by carrier. The source uses wind_speed &gt; 20 and all matched flight/weather rows as its denominator. See the method notes below for scope and data-quality limits.</p></figcaption>
           </figure>
           <figure>
             <a href="./images/data-analytics/excel-activity-pivot.png" target="_blank" rel="noopener noreferrer" aria-label="View Activity and Completion Reporting full-size (opens in a new tab)">
@@ -72,7 +73,87 @@
             <figcaption><strong>Airport Database Model</strong><span>Database modelling · Academic project</span><p>An academic entity-relationship diagram covering flights, airlines, airports, planes, weather, passengers, and bookings. It illustrates schema planning rather than a production database deployment.</p></figcaption>
           </figure>
         </div>
-        <div class="evidence"><strong>Scope of this work</strong><span class="note">These are academic project screenshots, not client engagements or a customer-support system. The DataGrip workspace shows the project schemas, while results screenshots show outputs rather than the underlying queries. Power BI and Tableau examples are not included in this selection.</span></div>
+
+        <div id="sql-examples" style="scroll-margin-top:100px">
+          <h3>SQL behind the analysis</h3>
+          <p>Selected academic queries demonstrate joins, aggregation, CTEs, filtering, and window functions. Source extracts have not been re-executed against the original databases during portfolio preparation.</p>
+          <details class="sql-example"><summary>Baseball: career batting average</summary><p>Aggregates hits and at-bats, filtering for more than 1,000 at-bats. Home runs and walks provide supporting context; the ranking uses batting average. The cutoff reduces tiny samples but does not remove era differences.</p><pre tabindex="0" aria-label="Baseball: career batting average SQL"><code>-- Adapted from Executive Summary Enhancing(1).docx.
+-- Academic source query; not re-executed during portfolio preparation.
+WITH BattingStats AS (
+    SELECT b.playerid,
+           p.namefirst || ' ' || p.namelast AS player_name,
+           SUM(b.ab::integer) AS total_at_bats,
+           SUM(b.h::integer) AS total_hits,
+           SUM(b.hr::integer) AS total_home_runs,
+           SUM(b.bb::integer) AS total_walks
+    FROM laman.batting b
+    JOIN laman.people p ON b.playerid = p.playerid
+    GROUP BY b.playerid, player_name
+    HAVING SUM(b.ab::integer) &gt; 1000
+)
+SELECT player_name,
+       total_hits * 1.0 / total_at_bats AS batting_average,
+       total_home_runs,
+       total_walks
+FROM BattingStats
+ORDER BY batting_average DESC
+LIMIT 10;
+</code></pre><div class="evidence-links"><a href="./sql/baseball-batting.sql" download>Download SQL <span>↓</span></a></div></details>
+<details class="sql-example"><summary>Chinook: Rock track sequencing</summary><p>Joins four tables and uses ROW_NUMBER to assign track-ID-based sequence numbers. Add an outer ORDER BY when a sorted display is needed.</p><pre tabindex="0" aria-label="Chinook: Rock track sequencing SQL"><code>-- Source: SQL Query (Chinook Database)(1).docx.
+-- Academic source query; not re-executed during portfolio preparation.
+-- Set the Chinook schema/search_path for these unqualified table names.
+-- ROW_NUMBER assigns a sequence, not a popularity ranking.
+SELECT t.TrackId,
+       t.Name AS TrackName,
+       g.Name AS Genre,
+       a.Name AS Artist,
+       ROW_NUMBER() OVER (
+           PARTITION BY g.Name ORDER BY t.TrackId
+       ) AS NewTrackNumber
+FROM Track t
+JOIN Album al ON t.AlbumId = al.AlbumId
+JOIN Artist a ON al.ArtistId = a.ArtistId
+JOIN Genre g ON t.GenreId = g.GenreId
+WHERE g.Name = 'Rock';
+</code></pre><div class="evidence-links"><a href="./sql/chinook-rock-sequence.sql" download>Download SQL <span>↓</span></a></div></details>
+<details class="sql-example"><summary>Chinook: artist catalog counts</summary><p>Combines track and album counts with CTEs. The original “recent albums” label is corrected here because the query contains no release-date filter.</p><pre tabindex="0" aria-label="Chinook: artist catalog counts SQL"><code>-- Adapted from Executive Summary 4(2).docx.
+-- Renamed "recent albums": the source contains no release-date filter.
+-- These are catalog counts, not a measure of recent activity.
+-- Not re-executed during portfolio preparation.
+WITH ArtistTrackCounts AS (
+    SELECT ar.artistid, ar.name AS artistname,
+           COUNT(t.trackid) AS totaltracks
+    FROM chinook.artist ar
+    JOIN chinook.album al ON ar.artistid = al.artistid
+    JOIN chinook.track t ON al.albumid = t.albumid
+    GROUP BY ar.artistid, ar.name
+),
+AlbumCounts AS (
+    SELECT ar.artistid, COUNT(al.albumid) AS albumcount
+    FROM chinook.artist ar
+    JOIN chinook.album al ON ar.artistid = al.artistid
+    GROUP BY ar.artistid
+)
+SELECT a.name AS artistname, atc.totaltracks, ac.albumcount
+FROM ArtistTrackCounts atc
+JOIN AlbumCounts ac ON atc.artistid = ac.artistid
+JOIN chinook.artist a ON atc.artistid = a.artistid
+ORDER BY ac.albumcount DESC, atc.totaltracks DESC;
+</code></pre><div class="evidence-links"><a href="./sql/chinook-catalog-counts.sql" download>Download SQL <span>↓</span></a></div></details>
+        </div>
+        <h3>From SQL to Power BI and Tableau</h3>
+        <p>I reused these analyses in Power BI and Tableau with small changes to the presentation. The screenshots below document Power BI report development; a Tableau export is not included in this evidence set.</p>
+        <div class="metric-grid"><div class="metric"><strong>A320-232</strong><span>Most-used aircraft model in the supplied JFK result</span></div><div class="metric"><strong>24,464</strong><span>Recorded flights in that result, not a tail number</span></div></div>
+        <div class="design-gallery analytics-gallery">
+          <figure><a href="./images/data-analytics/power-bi-chinook-original.png" target="_blank" rel="noopener noreferrer" aria-label="View original Chinook Power BI screenshot in a new tab"><img src="./images/data-analytics/power-bi-chinook-original.png" alt="Power BI report-development screenshot showing artist track counts" loading="lazy" decoding="async"></a><figcaption><strong>Chinook catalog analysis in Power BI</strong><span>Original report-development screenshot</span><p>The original annotation refers to recent activity; the supplied SQL supports catalog counts only. The downloadable query above corrects this label.</p></figcaption></figure>
+          <figure><a href="./images/data-analytics/power-bi-jfk-original.png" target="_blank" rel="noopener noreferrer" aria-label="View original JFK Power BI screenshot in a new tab"><img src="./images/data-analytics/power-bi-jfk-original.png" alt="Power BI JFK aircraft-usage report showing a rounded 24K value" loading="lazy" decoding="async"></a><figcaption><strong>JFK aircraft usage in Power BI</strong><span>Original report-development screenshot</span><p>The screenshot rounds the count to 24K. The result card above preserves 24,464; the gauge does not establish a market share or performance target.</p></figcaption></figure>
+        </div>
+        <details class="sql-example"><summary>Method and interpretation notes</summary><ul>
+          <li><strong>Wind:</strong> The source uses wind_speed &gt; 20 and divides qualifying rows by all rows in an inner flight/weather join, grouped by carrier. It has no explicit JFK-origin filter. Check units, join uniqueness, missing wind values, and airport scope before interpreting the results. Wind exposure does not establish safety or resilience.</li>
+          <li><strong>Rain and schools:</strong> These source summaries label their findings hypothetical, so they are not published as measured outcomes. The rain query needs column and grouping corrections. The schools query needs a defined season/stint grain and checks for duplicate joins.</li>
+          <li><strong>Pitchers and teams:</strong> The pitcher query needs zero-innings handling and a meaningful innings cutoff. The team query selects three season rows rather than aggregating each team's latest three seasons.</li>
+        </ul></details>
+        <div class="evidence"><strong>Scope of this work</strong><span class="note">These are academic project screenshots, not client engagements or a customer-support system. The DataGrip workspace shows the project schemas; selected SQL sources accompany the output screenshots. Power BI development screenshots and selected SQL sources are included. Tableau reuse is described by the author; a Tableau export has not yet been supplied.</span></div>
       </div>
     </div>
   </section>
