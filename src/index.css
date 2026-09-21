@@ -185,3 +185,20 @@ h2 { font-size: clamp(44px, 5vw, 67px); margin: 0; }
   .credential-item h3 { font-size: 13px; }
   .growth-section .transcript-block summary { padding-left: 20px; }
 }
+
+
+/* Professional visual refresh · restrained blue + gold */
+body{background:linear-gradient(180deg,#fbfcff 0%,var(--paper) 34%,#f7f4ec 100%)}
+.site-header{backdrop-filter:blur(12px)}
+.hero:before{content:'';position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(37,126,209,.10),transparent 70%);left:-190px;top:110px;pointer-events:none}.hero{position:relative}
+.filter{background:rgba(255,255,255,.68)}.filter:hover,.filter.active{background:linear-gradient(135deg,var(--navy),#1b527f);border-color:transparent;box-shadow:0 7px 18px rgba(20,35,53,.13)}
+.project-card{border:1px solid rgba(20,35,53,.07);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(20,35,53,.04)}
+.project-card.featured{background:linear-gradient(145deg,#142335,#0d1a29 72%);border-color:rgba(216,153,52,.25);box-shadow:0 18px 42px rgba(13,26,41,.16)}
+.project-card.featured:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 90% 5%,rgba(52,139,220,.13),transparent 34%);pointer-events:none}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(20,35,53,.11)}
+.project-card img{transition:transform .35s ease,filter .35s ease}.project-card a:hover img{transform:scale(1.018);filter:saturate(1.08)}
+.tag-row span{border:1px solid rgba(20,35,53,.06);border-radius:999px}.featured .tag-row span{border-color:rgba(255,255,255,.10);background:rgba(47,127,199,.13);color:#d8e8f7}
+.project-case-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:11px;font-weight:700;border-bottom:1px solid var(--amber);padding-bottom:4px;width:max-content}.project-case-link span{color:var(--amber);transition:transform .2s ease}.project-case-link:hover span{transform:translateX(4px)}
+.skill-card{transition:background .2s ease,transform .2s ease}.skill-card:hover{background:rgba(255,255,255,.55);transform:translateY(-2px)}
+.contact-panel{background:linear-gradient(135deg,#dda142,#c98625);box-shadow:0 20px 48px rgba(20,35,53,.12)}
+@media(max-width:800px){.hero:before{display:none}.project-card{border-radius:10px}}
