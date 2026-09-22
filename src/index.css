@@ -219,3 +219,29 @@ body{background:linear-gradient(180deg,#fbfcff 0%,var(--paper) 34%,#f7f4ec 100%)
 .journey-section{background:linear-gradient(145deg,#10243a,#0b1a2a 68%,#143a59)}
 .education-section{background:linear-gradient(180deg,var(--paper),#f4f8fc)}
 .credential-item{transition:padding .2s ease,background .2s ease}.credential-item:hover{padding-left:12px;padding-right:12px;background:#fff}
+
+
+/* Final QA polish · accessibility, responsive balance, and interaction clarity */
+a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+.filter:focus-visible { outline-offset: 2px; }
+.skill-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.project-case-link { position: relative; z-index: 1; }
+@media (max-width: 1050px) and (min-width: 801px) {
+  .skill-grid { grid-template-columns: repeat(3, 1fr); }
+  .skill-card:nth-child(3) { border-right: 0; }
+}
+@media (max-width: 800px) {
+  .skill-grid { grid-template-columns: 1fr 1fr; }
+  .filter-row { overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+  .filter { flex: 0 0 auto; }
+}
+@media (max-width: 440px) {
+  .skill-grid { grid-template-columns: 1fr; }
+  .skill-card, .skill-card:not(:first-child), .skill-card:nth-child(even) { padding: 18px 0; border-left: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .skill-card:last-child { border-bottom: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .marquee-content { transform: none !important; }
+}
