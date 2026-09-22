@@ -245,3 +245,47 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .marquee-content { transform: none !important; }
 }
+
+
+/* Selected work thumbnails · compact visuals keep secondary cards concise */
+.project-thumb-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #e9eef3;
+  position: relative;
+  z-index: 1;
+}
+.project-thumb-link img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.project-thumb-featured {
+  margin-top: 18px;
+}
+.project-thumb-featured img {
+  height: 172px;
+}
+.project-thumb-compact {
+  margin-top: 14px;
+  border: 1px solid rgba(20,35,53,.08);
+  box-shadow: 0 7px 18px rgba(20,35,53,.06);
+}
+.project-thumb-compact img {
+  height: 96px;
+}
+.project-card.has-compact-image .project-body {
+  padding-top: 18px;
+}
+.project-card.has-compact-image {
+  min-height: 340px;
+}
+@media (max-width: 800px) {
+  .project-thumb-featured img { height: 158px; }
+  .project-thumb-compact img { height: 92px; }
+}
+@media (max-width: 440px) {
+  .project-thumb-compact img { height: 86px; }
+  .project-card.has-compact-image .project-body { padding-top: 16px; }
+}
