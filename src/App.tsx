@@ -156,8 +156,7 @@ function App() {
             <li>Complete and document at least two advanced Azure/AWS labs to strengthen my system-administration pathway.</li>
             <li>Write weekly reflections connecting a scripture or spiritual principle to professional learning.</li>
           </ul>
-          <p>These were my initial learning targets. The project examples and final reflection show the work I have documented; they do not establish completion of every target.</p>
-          <div className="document-links"><a href="https://www.loom.com/share/0fe919c84ab34c04ad96c274e21a79ea" target="_blank" rel="noopener noreferrer"><Sparkles size={19}/><span><strong>Week 1 video response</strong><small>IT497 · Original Loom submission</small></span><ArrowUpRight size={17}/></a></div>
+          <p>These goals gave me a clearer way to connect technical progress with reflection and accountability. I learned to document projects more deliberately, explain what I gained from each assignment, and connect professional growth with integrity, service, and continuous learning.</p>
         </article>
         <article className="transcript-block" id="capstone-reflection" style={{ scrollMarginTop: '100px' }} aria-labelledby="capstone-reflection-title">
           <h3 id="capstone-reflection-title">IT497 Capstone: Reflection &amp; Professional Growth</h3>
