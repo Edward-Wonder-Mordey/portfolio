@@ -181,3 +181,160 @@
 .document-links small { color:#747c84; font-size:9px; }
 @media (max-width:800px) { .credential-showcase { grid-template-columns:1fr 1fr; } .language-evidence { grid-template-columns:1fr 1fr; } .language-evidence > div { border-bottom:1px solid #334354; } }
 @media (max-width:440px) { .credential-showcase, .document-links, .language-evidence { grid-template-columns:1fr; } .language-evidence > div { border-right:0; } }
+
+
+/* Credential gallery · award-inspired, restrained and professional */
+.credential-stage {
+  position: relative;
+  overflow: hidden;
+  margin-top: 78px;
+  padding: 38px;
+  border: 1px solid #243d59;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(216,154,50,.18), transparent 27%),
+    linear-gradient(145deg, #0d2035 0%, #132d49 58%, #10243a 100%);
+  box-shadow: 0 24px 56px rgba(13,32,53,.18);
+}
+.credential-stage::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(216,154,50,.18);
+  border-radius: 14px;
+  pointer-events: none;
+}
+.credential-stage::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -62px;
+  bottom: -82px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(255,255,255,.025), 0 0 0 56px rgba(255,255,255,.018);
+  pointer-events: none;
+}
+.credential-stage > * { position: relative; z-index: 1; }
+.credential-stage-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 7px 11px;
+  border: 1px solid rgba(216,154,50,.34);
+  border-radius: 999px;
+  background: rgba(216,154,50,.08);
+  color: #f0bd63;
+  font: 700 9px 'DM Mono', monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.credential-stage .academic-heading { margin-bottom: 30px; }
+.credential-stage .academic-heading > span { color: #e5ad4c; }
+.credential-stage .academic-heading h3 {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: -.025em;
+}
+.credential-stage .academic-heading p {
+  color: #b8c5d1;
+  max-width: 670px;
+}
+.credential-stage .credential-showcase {
+  gap: 18px;
+}
+.credential-stage .certificate-card {
+  position: relative;
+  background: linear-gradient(180deg,#fffdf8 0%,#f3efe6 100%);
+  border: 1px solid rgba(224,190,126,.56);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.16);
+}
+.credential-stage .certificate-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d89a32, transparent);
+  z-index: 2;
+}
+.credential-stage .certificate-card:hover {
+  transform: translateY(-7px);
+  border-color: #e0b45f;
+  box-shadow: 0 22px 42px rgba(0,0,0,.24);
+}
+.credential-stage .certificate-card img,
+.credential-stage .certificate-placeholder {
+  background: #fff;
+  border-bottom: 1px solid #e5d9c2;
+}
+.credential-stage .certificate-card img {
+  object-fit: contain;
+  padding: 8px;
+}
+.credential-stage .certificate-placeholder {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(216,154,50,.15), transparent 38%),
+    linear-gradient(145deg,#102943,#173a5d);
+  color: #f0bd63;
+}
+.credential-stage .certificate-card > div:last-child {
+  padding: 20px 19px 19px;
+}
+.credential-stage .certificate-card span {
+  color: #9b6b22;
+  font-weight: 700;
+}
+.credential-stage .certificate-card h3 {
+  color: #14283d;
+  font-size: 16px;
+}
+.credential-stage .certificate-card p {
+  color: #6b747c;
+}
+.credential-stage .certificate-card b {
+  color: #153a5d;
+}
+.credential-stage .language-evidence {
+  margin-top: 20px;
+  border: 1px solid rgba(216,154,50,.30);
+  border-radius: 13px;
+  overflow: hidden;
+  background: linear-gradient(135deg,#0a1b2d,#173a5d);
+  box-shadow: 0 12px 26px rgba(0,0,0,.14);
+}
+.credential-stage .language-evidence > div {
+  border-right-color: rgba(255,255,255,.10);
+}
+.credential-stage .language-evidence span { color: #9fb0bf; }
+.credential-stage .language-evidence strong { color: #efb653; }
+.credential-stage .document-links {
+  gap: 12px;
+  margin-top: 18px;
+}
+.credential-stage .document-links a {
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(216,154,50,.24);
+  border-left: 3px solid #d89a32;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+.credential-stage .document-links a:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+.credential-stage .document-links strong { color: #14283d; }
+.credential-stage .document-links small { color: #727b84; }
+
+@media (max-width:800px) {
+  .credential-stage { padding: 30px 24px; }
+}
+@media (max-width:440px) {
+  .credential-stage { padding: 26px 16px; border-radius: 14px; }
+  .credential-stage::before { inset: 8px; }
+  .credential-stage .academic-heading h3 { font-size: 21px; }
+}
