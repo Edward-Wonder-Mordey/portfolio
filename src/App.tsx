@@ -220,29 +220,42 @@ function App() {
           </div>
           <div className="growth-pill-row"><span>Integrity</span><span>Leadership</span><span>Resilience</span><span>Stewardship</span></div>
           <details open><summary><strong>Read the full story</strong><span>Spiritual growth · education · leadership · resilience</span></summary><div className="about-copy"><h3>Introduction</h3><p>My professional journey is inseparably tied to my spiritual progression. Life has taught me that even when you are doing right by God, challenges still come. Yet, through faith and discipline, I have pressed forward. This story reflects my academic achievements, leadership experiences, and the lessons I have learned, showing how they prepare me for both professional excellence and lifelong discipleship.</p><h3>Academic and spiritual integration</h3><p>I began with BYU-Pathway Worldwide in 2023, building discipline, communication, university skills, and technical confidence. At Ensign College, my studies progressed into System Administration while I maintained a 4.0 GPA. My technical development has included Python, information technology, cloud server administration, networking, databases, Linux, network configuration, cybersecurity, cloud computing, Azure, AWS, college writing, and career development.</p><p>Alongside technical studies, religious courses through BYU-Idaho and Institutes of Religion strengthened my testimony of Jesus Christ and reminded me that education must be grounded in eternal values. Courses concerning the Savior, eternal families, the Book of Mormon, and forgiveness became spiritual anchors rather than simply academic requirements.</p><h3>Callings and leadership</h3><p>In Twifo Praso Ghana District, I served in Institute and Seminary responsibilities, taught, supported missionary work, participated in district leadership, audited, and represented Young Single Adults. After moving to Kumasi, I served as a Stake High Councilor and Stake Welfare & Self-Reliance Specialist. These callings taught me accountability, teaching, organization, stakeholder coordination, and the importance of supporting people in both spiritual and temporal matters.</p><h3>Life lessons and resilience</h3><p>On August 2, 2025, I experienced one of the hardest trials of my life with the passing of my father. The grief was real, but the plan of salvation, temple work, and the grace of Heavenly Father gave me comfort and hope. Even while grieving, I continued my studies and responsibilities. That season taught me that resilience is sometimes simply choosing to continue doing what is right when you do not feel strong enough to do it.</p><h3>Faith in professional practice</h3><p>My faith influences the way I approach technology. When I work with data, integrity matters. When I troubleshoot a difficult system, patience matters. When someone corrects my work, humility matters. When I design infrastructure that others will depend upon, stewardship matters. I want professional excellence to include technical competence, trustworthiness, security, responsibility, and service.</p><h3>Application of learning</h3><ul><li><strong>Technical skills:</strong> Applying IT knowledge to solve problems and prepare for future employment.</li><li><strong>Leadership:</strong> Using lessons from Church callings to manage responsibilities, teach, coordinate, and support others.</li><li><strong>Resilience:</strong> Balancing grief, discouragement, and academic rigor while remaining faithful.</li><li><strong>Integration of faith and work:</strong> Allowing eternal values to guide professional decisions and relationships.</li></ul><h3>Future orientation</h3><p>I am committed to completing my Bachelor of Applied Science in System Administration at Ensign College, continuing my B.Eng. Electrical & Electronics Engineering top-up at Kumasi Technical University, developing professionally in cloud, cybersecurity, networking, and system administration, supporting my family, serving faithfully, and building a career where technical excellence and spiritual character can exist together.</p><h3>Conclusion</h3><p>My professional growth has been shaped by both academic excellence and spiritual resilience. Certificates, coursework, callings, leadership, engineering study, and personal trials have prepared me for a career in IT and engineering, but more importantly, they have taught me that true success comes from combining technical skill with faith in God. Even when life is hard, I remain committed to pressing forward with steadfastness, knowing that both my professional and spiritual journeys are guided by the Savior.</p></div></details></div>
-        <article className="transcript-block" id="capstone-goals" style={{ scrollMarginTop: '100px' }}>
-          <h3>Where my capstone began</h3>
-          <p>My IT497 Week 1 plan connected professional discipline with faith, integrity, and service. I set three goals to guide the course:</p>
-          <ul>
-            <li>Document at least five major IT projects, including the skills applied, challenges, and outcomes.</li>
-            <li>Complete and document at least two advanced Azure/AWS labs to strengthen my system-administration pathway.</li>
-            <li>Write weekly reflections connecting a scripture or spiritual principle to professional learning.</li>
-          </ul>
-          <p>These goals gave me a clearer way to connect technical progress with reflection and accountability. I learned to document projects more deliberately, explain what I gained from each assignment, and connect professional growth with integrity, service, and continuous learning.</p>
-        </article>
-        <article className="transcript-block" id="capstone-reflection" style={{ scrollMarginTop: '100px' }} aria-labelledby="capstone-reflection-title">
-          <h3 id="capstone-reflection-title">IT497 Capstone: Reflection &amp; Professional Growth</h3>
-          <p>My capstone connected technical development with ethical judgment, communication, faith, and service. These three lessons continue to guide how I approach my work.</p>
-          <ul>
-            <li><strong>Think beyond the technical solution.</strong> Consider privacy, fairness, data accuracy, and the effects of decisions on people.</li>
-            <li><strong>Use feedback to improve.</strong> Seek outside testing earlier and explain technical results clearly for the intended audience.</li>
-            <li><strong>Put values into practice.</strong> Bring integrity, humility, and service to professional responsibilities, supported by better planning and follow-through.</li>
-          </ul>
-          <p>My reflection records 909/921 points (98.7%) across Weeks 1–6. This is a self-reported course-period result, not a final course grade.</p>
-          <div className="document-links">
-            <a href="./reflections/it497-capstone-portfolio-reflection.pdf" target="_blank" rel="noopener noreferrer"><Award size={19}/><span><strong>Read the capstone reflection</strong><small>One-page portfolio edition · PDF</small></span><ArrowUpRight size={17}/></a>
-          </div>
-        </article>
+        <div className="capstone-showcase">
+          <article className="transcript-block capstone-card capstone-origin" id="capstone-goals" style={{ scrollMarginTop: '100px' }}>
+            <div className="capstone-card-head">
+              <div className="capstone-icon"><Sparkles size={20}/></div>
+              <div><span className="capstone-kicker">IT497 · Capstone foundation</span><h3>Where my capstone began</h3></div>
+            </div>
+            <p>My IT497 Week 1 plan connected professional discipline with faith, integrity, and service. I set three goals to guide the course:</p>
+            <ul className="capstone-goal-list">
+              <li>Document at least five major IT projects, including the skills applied, challenges, and outcomes.</li>
+              <li>Complete and document at least two advanced Azure/AWS labs to strengthen my system-administration pathway.</li>
+              <li>Write weekly reflections connecting a scripture or spiritual principle to professional learning.</li>
+            </ul>
+            <p className="capstone-closing">These goals gave me a clearer way to connect technical progress with reflection and accountability. I learned to document projects more deliberately, explain what I gained from each assignment, and connect professional growth with integrity, service, and continuous learning.</p>
+          </article>
+
+          <article className="transcript-block capstone-card capstone-reflection-card" id="capstone-reflection" style={{ scrollMarginTop: '100px' }} aria-labelledby="capstone-reflection-title">
+            <div className="capstone-card-head">
+              <div className="capstone-icon"><Award size={20}/></div>
+              <div><span className="capstone-kicker">IT497 · Reflection</span><h3 id="capstone-reflection-title">Reflection &amp; Professional Growth</h3></div>
+            </div>
+            <p>My capstone connected technical development with ethical judgment, communication, faith, and service. These three lessons continue to guide how I approach my work.</p>
+            <ul className="capstone-lesson-list">
+              <li><strong>Think beyond the technical solution.</strong> Consider privacy, fairness, data accuracy, and the effects of decisions on people.</li>
+              <li><strong>Use feedback to improve.</strong> Seek outside testing earlier and explain technical results clearly for the intended audience.</li>
+              <li><strong>Put values into practice.</strong> Bring integrity, humility, and service to professional responsibilities, supported by better planning and follow-through.</li>
+            </ul>
+            <div className="capstone-score-panel">
+              <div><strong>98.7%</strong><span>Weeks 1–6 result</span></div>
+              <div><strong>909 / 921</strong><span>Recorded points</span></div>
+              <p>This is a self-reported course-period result, not a final course grade.</p>
+            </div>
+            <div className="document-links capstone-reflection-link">
+              <a href="./reflections/it497-capstone-portfolio-reflection.pdf" target="_blank" rel="noopener noreferrer"><Award size={19}/><span><strong>Read the capstone reflection</strong><small>One-page portfolio edition · PDF</small></span><ArrowUpRight size={17}/></a>
+            </div>
+          </article>
+        </div>
         <div className="transcript-block"><h3>Spiritual Milestones</h3>{spiritualMilestones.map(([date,event,note])=><details key={event}><summary><strong>{event}</strong><span>{date}</span></summary><p>{note}</p></details>)}</div>
       </section>
 
