@@ -425,3 +425,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline
   .project-card[class*="theme-"] { min-height: 310px; }
   .project-card[class*="theme-"] .project-thumb-compact img { height: 86px; }
 }
+
+
+/* Theme precedence fix · ensure each card's intended palette wins over legacy nth-child backgrounds */
+.project-grid .project-card[class*="theme-"] {
+  background: linear-gradient(145deg, var(--card-bg-1), var(--card-bg-2));
+}
