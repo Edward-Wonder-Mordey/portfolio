@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Executive resume of Edward Wonder Mordey - IT systems, data analytics, technical support, engineering, and digital operations." />
+  <link rel="icon" type="image/jpeg" href="./images/image_1780825279152.jpeg" />
+  <link rel="apple-touch-icon" href="./images/image_1780825279152.jpeg" />
+  <title>Edward Wonder Mordey | Executive Resume</title>
+  <style>
+    :root{
+      --navy:#112b46;
+      --navy-2:#173b5e;
+      --blue:#2f79b7;
+      --gold:#d7a347;
+      --ink:#1d2731;
+      --muted:#667484;
+      --line:#dce5ec;
+      --soft:#f4f7fa;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:#eef3f7;
+      color:var(--ink);
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      line-height:1.48;
+    }
+    a{color:inherit;text-decoration:none}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:980px;margin:auto;padding:11px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    }
+    .topbar strong{color:var(--navy);font-size:.9rem}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{
+      border:1px solid #cad6df;border-radius:8px;background:#fff;color:var(--navy);
+      padding:8px 12px;font-size:.8rem;font-weight:800;cursor:pointer;
+    }
+    .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .resume{
+      max-width:980px;margin:26px auto 56px;
+      display:grid;grid-template-columns:285px 1fr;
+      background:var(--white);
+      border:1px solid var(--line);
+      box-shadow:0 24px 60px rgba(17,43,70,.12);
+      overflow:hidden;
+    }
+    .sidebar{
+      background:linear-gradient(180deg,var(--navy),#0d2238 78%);
+      color:#eaf2f8;
+      padding:34px 26px 30px;
+    }
+    .photo{
+      display:block;
+      width:148px;height:168px;
+      object-fit:cover;object-position:center top;
+      margin:0 auto 24px;
+      border-radius:10px;
+      border:4px solid rgba(255,255,255,.96);
+      box-shadow:0 12px 28px rgba(0,0,0,.24);
+      background:#dbe4eb;
+    }
+    .side-name{
+      text-align:center;
+      margin-bottom:24px;
+    }
+    .side-name strong{
+      display:block;
+      font-size:1.08rem;
+      letter-spacing:.01em;
+      color:#fff;
+    }
+    .side-name span{
+      display:block;
+      margin-top:5px;
+      color:#b9ccdc;
+      font-size:.72rem;
+      line-height:1.45;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .side-section{margin-top:25px}
+    .side-section h2{
+      margin:0 0 10px;
+      font-size:.75rem;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:#f3c66d;
+      padding-bottom:7px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+    .contact-list,.plain-list{list-style:none;margin:0;padding:0}
+    .contact-list li{
+      margin:0 0 9px;
+      font-size:.78rem;
+      color:#d7e4ee;
+      word-break:break-word;
+    }
+    .plain-list li{
+      margin:0 0 7px;
+      font-size:.78rem;
+      color:#d6e1ea;
+    }
+    .edu-item,.credential{
+      margin-bottom:13px;
+      font-size:.77rem;
+      color:#d8e4ed;
+    }
+    .edu-item strong,.credential strong{
+      display:block;color:#fff;font-size:.8rem;margin-bottom:3px;
+    }
+    .main{
+      padding:38px 38px 34px;
+      background:#fff;
+    }
+    .identity{
+      padding-bottom:22px;
+      border-bottom:1px solid var(--line);
+      position:relative;
+    }
+    .identity:after{
+      content:"";position:absolute;left:0;bottom:-1px;width:90px;height:3px;background:var(--gold);
+    }
+    .identity h1{
+      margin:0;color:var(--navy);
+      font-size:2.15rem;line-height:1.08;letter-spacing:-.035em;
+    }
+    .headline{
+      margin:9px 0 0;color:#376687;
+      font-size:.84rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;
+    }
+    .section{margin-top:24px}
+    .section h2{
+      margin:0 0 13px;
+      color:var(--navy);
+      font-size:.86rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      display:flex;align-items:center;gap:10px;
+    }
+    .section h2:after{content:"";height:1px;background:var(--line);flex:1}
+    .profile{
+      margin:0;color:#394856;font-size:.9rem;
+    }
+    .job{
+      padding:0 0 16px;margin-bottom:16px;
+      border-bottom:1px solid var(--line);
+    }
+    .job:last-child{margin-bottom:0;border-bottom:0;padding-bottom:0}
+    .job-head{
+      display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
+    }
+    .job h3{margin:0;color:var(--navy);font-size:.95rem}
+    .role{font-weight:800;font-size:.84rem;margin:3px 0 2px;color:#334b60}
+    .place{font-size:.78rem;color:var(--muted)}
+    .date{
+      white-space:nowrap;font-size:.78rem;font-weight:800;color:#68798a;
+      padding-top:1px;
+    }
+    .job ul{
+      margin:8px 0 0;padding-left:18px;
+    }
+    .job li{
+      margin:4px 0;font-size:.82rem;color:#364655;
+    }
+    .projects{
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
+    .project{
+      border:1px solid var(--line);background:#f9fbfd;
+      border-radius:9px;padding:12px 13px;
+    }
+    .project strong{display:block;color:var(--navy);font-size:.82rem;margin-bottom:4px}
+    .project p{margin:0;color:#536371;font-size:.77rem}
+    .footer{
+      margin-top:25px;padding-top:15px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      color:#75828e;font-size:.73rem;
+    }
+    @media(max-width:780px){
+      .resume{grid-template-columns:1fr;margin:0;border-left:0;border-right:0;box-shadow:none}
+      .sidebar{padding:28px 22px}
+      .photo{width:132px;height:150px}
+      .main{padding:30px 22px}
+      .projects{grid-template-columns:1fr}
+      .job-head{flex-direction:column;gap:3px}
+      .date{white-space:normal}
+    }
+    @media print{
+      @page{size:A4;margin:0}
+      body{background:#fff}
+      .topbar{display:none}
+      .resume{
+        max-width:none;margin:0;border:0;box-shadow:none;
+        grid-template-columns:31% 69%;
+        min-height:297mm;
+      }
+      .sidebar{padding:24px 20px}
+      .main{padding:26px 28px}
+      .photo{width:118px;height:134px;margin-bottom:18px}
+      .side-section{margin-top:18px}
+      .section{margin-top:18px}
+      .job{padding-bottom:11px;margin-bottom:11px}
+      .job,.project,.edu-item,.credential{break-inside:avoid}
+      .identity h1{font-size:1.78rem}
+      .profile{font-size:.79rem}
+      .job li{font-size:.74rem}
+      .project p{font-size:.7rem}
+      .project strong{font-size:.76rem}
+      .side-section h2{font-size:.68rem}
+      .contact-list li,.plain-list li,.edu-item,.credential{font-size:.69rem}
+      .footer{font-size:.66rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <strong>Edward Wonder Mordey · Executive Resume</strong>
+      <div class="actions">
+        <a class="btn" href="./">← Portfolio</a>
+        <a class="btn" href="./master-cv.html" target="_blank" rel="noopener noreferrer">Full Master CV ↗</a>
+        <button class="btn primary" onclick="window.print()">Print / Save as PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <article class="resume">
+    <aside class="sidebar">
+      <img class="photo" src="./images/edward-passport-photo-v2.jpg" alt="Edward Wonder Mordey portrait" />
+
+      <div class="side-name">
+        <strong>Edward Wonder Mordey</strong>
+        <span>IT · Engineering · Systems · Data</span>
+      </div>
+
+      <section class="side-section">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li>Kumasi, Ghana</li>
+          <li><a href="tel:+233505374537">+233 50 537 4537</a></li>
+          <li><a href="mailto:edwardwondermordey@gmail.com">edwardwondermordey@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/edward-wonder-mordey-0532822b7/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://edward-wonder-mordey.github.io/portfolio/" target="_blank" rel="noopener">Portfolio</a></li>
+          <li><a href="https://github.com/Edward-Wonder-Mordey" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2>Core Skills</h2>
+        <ul class="plain-list">
+          <li>Windows Server 2022 & Active Directory</li>
+          <li>Linux / Ubuntu Administration</li>
+          <li>DNS · DHCP · Hyper-V</li>
+          <li>Azure & AWS Fundamentals</li>
+          <li>Nmap · Wireshark · Packet Tracer</li>
+          <li>SQL · PostgreSQL · DataGrip</li>
+          <li>Power BI · Tableau · Excel</li>
+          <li>Python · PowerShell · Bash</li>
+          <li>Technical Writing & Documentation</li>
+          <li>Troubleshooting & Customer Support</li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <strong>Ensign College</strong>
+          BAS System Administration<br>
+          Final Year · GPA 4.0/4.0<br>
+          Expected 2026
+        </div>
+        <div class="edu-item">
+          <strong>Kumasi Technical University</strong>
+          Diploma in Electrical & Electronic Engineering<br>
+          CGPA 3.84 · Second Class Upper
+        </div>
+        <div class="edu-item">
+          <strong>BYU-Pathway Worldwide</strong>
+          PathwayConnect · GPA 4.0<br>
+          Completed Feb 2024
+        </div>
+      </section>
+
+      <section class="side-section">
+        <h2>Credentials</h2>
+        <div class="credential"><strong>IT Professional Certificate</strong>Ensign College · Feb 2026</div>
+        <div class="credential"><strong>Technical Support Engineer</strong>Ensign College · Dec 2024</div>
+        <div class="credential"><strong>TestOut Network Pro</strong>2024</div>
+        <div class="credential"><strong>Hybrid Server Pro · Core</strong>2024</div>
+        <div class="credential"><strong>TestOut Client Pro</strong>2024</div>
+        <div class="credential"><strong>English</strong>EF SET C1 Advanced · Pearson Versant B2+</div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <header class="identity">
+        <h1>Edward Wonder Mordey</h1>
+        <div class="headline">System Administration · Cloud · Networking · Data Analytics</div>
+      </header>
+
+      <section class="section">
+        <h2>Professional Profile</h2>
+        <p class="profile">IT and engineering professional with practical experience in systems administration, technical support, data analysis, auditing, digital operations, and documentation. Final-year BAS System Administration student at Ensign College with a 4.0/4.0 GPA, supported by a completed Diploma in Electrical & Electronic Engineering (CGPA 3.84, Second Class Upper). Experienced with Windows/Linux systems, networking, Azure/AWS technologies, SQL, Power BI, Tableau, Python, PowerShell, Bash, troubleshooting, and technical communication.</p>
+      </section>
+
+      <section class="section">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Collins Printing Press & Internet Café</h3>
+              <div class="role">Printing, Digital Services & Operations Assistant</div>
+              <div class="place">Ghana</div>
+            </div>
+            <div class="date">Jul 2026 – Present</div>
+          </div>
+          <ul>
+            <li>Deliver printing, scanning, document preparation, online registrations, internet, and customer digital services.</li>
+            <li>Create and format CVs, letters, reports, applications, and other personal and business documents.</li>
+            <li>Provide basic computer, printer, internet, file-conversion, and Microsoft Office support while handling payments, records, stock, and supplies.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Eragonova Enterprise</h3>
+              <div class="role">Founder & Lead Consultant</div>
+              <div class="place">Kumasi, Ghana</div>
+            </div>
+            <div class="date">Oct 2025 – Present</div>
+          </div>
+          <ul>
+            <li>Develop services across IT systems, data analytics, electrical/electronic engineering, branding, and professional documentation.</li>
+            <li>Prepare infrastructure concepts, technical demonstrations, reports, presentations, and service workflows involving Windows/Linux, cloud, networking, SQL, and BI tools.</li>
+            <li>Designed and maintain the enterprise website while coordinating business planning, documentation, and quality assurance.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Springboard</h3>
+              <div class="role">Auditor</div>
+              <div class="place">USA</div>
+            </div>
+            <div class="date">Oct 2025 – Dec 2025</div>
+          </div>
+          <ul>
+            <li>Audited participant data and program processes for accuracy, completeness, and compliance.</li>
+            <li>Identified discrepancies, escalated issues, and supported reporting accuracy and operational accountability.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Springboard</h3>
+              <div class="role">Data Analyst Specialist</div>
+              <div class="place">USA</div>
+            </div>
+            <div class="date">Jun 2025 – Oct 2025</div>
+          </div>
+          <ul>
+            <li>Cleaned, reviewed, and validated complex family-tree datasets under structured productivity and quality expectations.</li>
+            <li>Identified inconsistencies and supported corrective processes, documentation, and deadline-driven delivery.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Earlier Experience</h3>
+              <div class="role">Graphic Design · Teaching · Missionary Service</div>
+            </div>
+            <div class="date">2021 – 2023</div>
+          </div>
+          <ul>
+            <li>Built experience in graphic design, teaching, public speaking, mentoring, outreach, scheduling, reporting, stakeholder communication, and conflict resolution.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Selected Projects</h2>
+        <div class="projects">
+          <div class="project"><strong>PromisedLand Data Center</strong><p>Hybrid Windows Server / Azure / AWS infrastructure proposal covering AD, DNS, DHCP, Hyper-V, storage, backup, security, and resilience.</p></div>
+          <div class="project"><strong>Linux Deployment & Security</strong><p>Users/groups, permissions, storage, SSH hardening, firewalling, updates, and auditing.</p></div>
+          <div class="project"><strong>Data Analytics & Reporting</strong><p>SQL, PostgreSQL, DataGrip, Excel, Power BI, and Tableau work across relational datasets.</p></div>
+          <div class="project"><strong>Networking & Security Labs</strong><p>Nmap/Zenmap, Packet Tracer routing, Wireshark packet analysis, and Linux connectivity/auditing.</p></div>
+        </div>
+      </section>
+
+      <div class="footer">
+        <span>Edward Wonder Mordey · Executive Resume · 2026</span>
+        <span>Building systems with purpose.</span>
+      </div>
+    </main>
+  </article>
+</body>
+</html>
