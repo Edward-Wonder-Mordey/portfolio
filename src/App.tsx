@@ -247,9 +247,11 @@ function App() {
               <li><strong>Put values into practice.</strong> Bring integrity, humility, and service to professional responsibilities, supported by better planning and follow-through.</li>
             </ul>
             <div className="capstone-score-panel">
-              <div><strong>98.7%</strong><span>Weeks 1–6 result</span></div>
+              <div><strong>A</strong><span>Final IT497 grade</span></div>
+              <div><strong>4.000</strong><span>Term GPA</span></div>
+              <div><strong>98.7%</strong><span>Weeks 1–6 reflection record</span></div>
               <div><strong>909 / 921</strong><span>Recorded points</span></div>
-              <p>This is a self-reported course-period result, not a final course grade.</p>
+              <p>Official academic record: IT497 IT Capstone completed with an A. The 98.7% figure reflects the documented Weeks 1–6 capstone reflection record.</p>
             </div>
             <div className="document-links capstone-reflection-link">
               <a href="./reflections/it497-capstone-portfolio-reflection.pdf" target="_blank" rel="noopener noreferrer"><Award size={19}/><span><strong>Read the capstone reflection</strong><small>One-page portfolio edition · PDF</small></span><ArrowUpRight size={17}/></a>
