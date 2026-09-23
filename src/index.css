@@ -816,7 +816,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline
   flex-direction:column;
   border-right:1px solid #e4dac9;
 }
-.capstone-score-panel > div:nth-child(2) { border-right:0; }
+.capstone-score-panel > div:nth-child(2),
+.capstone-score-panel > div:nth-child(4) { border-right:0; }
+.capstone-score-panel > div:nth-child(-n+2) { border-bottom:1px solid #e4dac9; }
 .capstone-score-panel strong {
   color:#17304a;
   font-size:22px;
