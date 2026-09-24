@@ -98,23 +98,6 @@ const ensignSemesters = [
 
 const topUpSemesters = [
   {
-    term:'2025/2026 · Level 2 · Semester 2',
-    courses:'9 courses · 21 credits · 62 grade points',
-    gpa:'2.9523',
-    cgpa:'3.3048',
-    rows:[
-      ['MATH214','Probability and Statistics','B','72'],
-      ['BEEE224','Digital communication systems','B','72'],
-      ['BEEE242','Power Generation Systems','D+','56'],
-      ['BEEE232','AC Machines','B','71'],
-      ['BEEE222','Control systems','C+','67'],
-      ['BEEE204','Optical Fibre Communication','C','63'],
-      ['BEEE208','Switching Theory and Logic Design','D+','59'],
-      ['BEEE212','Fluid Mechanics','C+','67'],
-      ['BEEE244','Electrical Engineering Lab IV','B','70'],
-    ],
-  },
-  {
     term:'2025/2026 · Level 2 · Semester 1',
     courses:'9 courses · 20 credits · 73.5 grade points',
     gpa:'3.6750',
@@ -129,6 +112,23 @@ const topUpSemesters = [
       ['BEEE243','Analog Communication and DC Machines Lab','B+','77'],
       ['BEEE245','Engineering Economics','C+','68'],
       ['BSTA247','Research Methodology for Engineers','B','72'],
+    ],
+  },
+  {
+    term:'2025/2026 · Level 2 · Semester 2',
+    courses:'9 courses · 21 credits · 62 grade points',
+    gpa:'2.9523',
+    cgpa:'3.3048',
+    rows:[
+      ['MATH214','Probability and Statistics','B','72'],
+      ['BEEE224','Digital communication systems','B','72'],
+      ['BEEE242','Power Generation Systems','D+','56'],
+      ['BEEE232','AC Machines','B','71'],
+      ['BEEE222','Control systems','C+','67'],
+      ['BEEE204','Optical Fibre Communication','C','63'],
+      ['BEEE208','Switching Theory and Logic Design','D+','59'],
+      ['BEEE212','Fluid Mechanics','C+','67'],
+      ['BEEE244','Electrical Engineering Lab IV','B','70'],
     ],
   },
 ];
@@ -176,7 +176,7 @@ function App() {
         <div className="academic-credentials"><div className="academic-heading"><span>04.1</span><div><h3>Credentials at a glance</h3><p>The qualifications and records that define the academic foundation of my professional journey.</p></div></div><div className="credential-list"><div className="credential-item"><GraduationCap size={25}/><div><span>Current · 4.0 / 4.0</span><h3>Bachelor of Applied Science in System Administration</h3><p>Ensign College · Final Year</p></div><ChevronDown size={18}/></div><div className="credential-item"><Award size={25}/><div><span>Completed · December 2025</span><h3>Diploma in Electrical & Electronic Engineering</h3><p>Kumasi Technical University · Final CGPA 3.84 · Second Class Upper Division</p></div><ChevronDown size={18}/></div><div className="credential-item"><Cpu size={25}/><div><span>Current · Level 300 on resumption</span><h3>B.Eng. Electrical & Electronics Engineering top-up</h3><p>Kumasi Technical University · Progressing from Level 2 · Current recorded CGPA 3.3048</p></div><ChevronDown size={18}/></div><div className="credential-item"><Check size={25}/><div><span>Professional certificates</span><h3>IT Professional · Technical Support Engineer · PathwayConnect</h3><p>TestOut Network Pro · Hybrid Server Pro · Client Pro</p></div><ChevronDown size={18}/></div></div></div>
         <div className="academic-ensign"><div className="academic-heading"><span>04.2</span><div><h3>Ensign College · Transcript history</h3><p>Semester-by-semester record from the official transcript, including course codes, grades, credits, quality points, and term GPA. Cumulative credit totals are intentionally omitted from the portfolio summary.</p></div></div><div className="ensign-transcript-list">{ensignSemesters.map(([term,date,gpa,cum,courses])=><details key={term}><summary><div className="ensign-summary-main"><strong>{term}</strong><span>{date}</span></div><div className="ensign-summary-gpa"><b>{gpa}</b><small>Term GPA</small><span>{cum} cumulative GPA</span></div><span className="ensign-arrow" aria-hidden="true">›</span></summary><div className="ensign-table"><div className="ensign-table-head"><span>Course</span><span>Course description</span><span>Credits</span><span>Grade</span><span>Quality points</span></div>{courses.map(([code,description,credits,grade,points])=><div className="ensign-table-row" key={code}><strong>{code}</strong><span>{description}</span><span>{credits}</span><b>{grade}</b><span>{points}</span></div>)}</div></details>)}</div><div className="ensign-awards"><div><span>Awarded</span><strong>12/18/2024</strong><p>Certificate · Technical Support Engineer</p></div><div><span>Awarded</span><strong>2/21/2026</strong><p>Certificate · IT Professional</p></div></div></div>
         <div className="academic-transcripts"><div className="academic-heading"><span>04.3</span><div><h3>Diploma · semester-by-semester record</h3><p>Detailed grades from the completed Electrical & Electronic Engineering diploma.</p></div></div><div className="transcript-block academic-transcript-list">{diplomaSemesters.map(([title,summary,courses])=><details key={title}><summary><strong>{title}</strong><span>{summary}</span></summary><ul>{courses.map(c=><li key={c}>{c}</li>)}</ul></details>)}</div></div>
-        <div className="academic-current"><div className="academic-heading"><span>04.4</span><div><h3>Current B.Eng. record</h3><p>The B.Eng. record now includes both Level 2 semesters, with Semester 2 shown first as the latest result; the programme status remains Level 300 on resumption.</p></div></div><div className="current-record-list">{topUpSemesters.map(({term,courses,gpa,cgpa,rows})=><div className="current-record-card" key={term}><div className="record-header"><div><span>{term}</span><h3>{courses}</h3></div><div className="record-metrics"><strong>{gpa}</strong><small>Semester GPA</small><b>{cgpa}</b><small>CGPA</small></div></div><div className="grade-table"><div className="grade-table-head"><span>Course</span><span>Course title</span><span>Grade</span><span>Mark</span></div>{rows.map(([code,name,grade,mark])=><div className="grade-row" key={code}><strong>{code}</strong><span>{name}</span><b className={`grade-badge grade-${grade.replace('+','plus')}`}>{grade}</b><small>{mark}%</small></div>)}</div></div>)}</div></div>
+        <div className="academic-current"><div className="academic-heading"><span>04.4</span><div><h3>Current B.Eng. record</h3><p>The B.Eng. record now includes both Level 2 semesters in chronological order, with Semester 1 shown first and Semester 2 second; the programme status remains Level 300 on resumption.</p></div></div><div className="current-record-list">{topUpSemesters.map(({term,courses,gpa,cgpa,rows})=><div className="current-record-card" key={term}><div className="record-header"><div><span>{term}</span><h3>{courses}</h3></div><div className="record-metrics"><strong>{gpa}</strong><small>Semester GPA</small><b>{cgpa}</b><small>CGPA</small></div></div><div className="grade-table"><div className="grade-table-head"><span>Course</span><span>Course title</span><span>Grade</span><span>Mark</span></div>{rows.map(([code,name,grade,mark])=><div className="grade-row" key={code}><strong>{code}</strong><span>{name}</span><b className={`grade-badge grade-${grade.replace('+','plus')}`}>{grade}</b><small>{mark}%</small></div>)}</div></div>)}</div></div>
         <div className="professional-credentials credential-stage"><div className="credential-stage-kicker"><Award size={17}/><span>Credentials &amp; distinctions</span></div><div className="academic-heading"><span>04.5</span><div><h3>Professional credentials</h3><p>Selected academic, technical, and language credentials with direct access to the supporting documents.</p></div></div>
           <div className="credential-showcase">
             <a className="certificate-card" href="./Network%20Pro.png" target="_blank" rel="noreferrer"><img src="./Network%20Pro.png" alt="TestOut Network Pro certificate"/><div><span>TestOut · 2024</span><h3>Network Pro</h3><p>Hardware · configuration · management · security · troubleshooting</p><b>View credential <ArrowUpRight size={14}/></b></div></a>
