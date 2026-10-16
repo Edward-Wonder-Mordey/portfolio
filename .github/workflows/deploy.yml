@@ -28,6 +28,18 @@ jobs:
         run: |
           cat assets/hv2-pptx/part*.b64 | tr -d '\n' | base64 --decode > public/HV2_Portfolio_Case_Study.pptx
           test "$(wc -c < public/HV2_Portfolio_Case_Study.pptx)" -eq 52930
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('public/heritage-vault.html')
+          text = p.read_text(encoding='utf-8')
+          old = '<div class="actions"><a class="button primary" href="#architecture">Explore architecture ↓</a><button class="button secondary" type="button" onclick="window.print()">Print / Save as PDF</button></div>'
+          new = '<div class="actions"><a class="button primary" href="#architecture">Explore architecture ↓</a><a class="button secondary" href="./HV2_Portfolio_Case_Study.pptx" download>Download PowerPoint ↓</a><button class="button secondary" type="button" onclick="window.print()">Print / Save as PDF</button></div>'
+          if old not in text:
+              raise SystemExit('Heritage Vault action row not found')
+          text = text.replace(old, new, 1)
+          text = text.replace('Use the Print / Save as PDF control above if you want an offline copy.', 'Download the original 13-slide PowerPoint portfolio deck above, or use Print / Save as PDF for a browser-ready PDF copy.', 1)
+          p.write_text(text, encoding='utf-8')
+          PY
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
