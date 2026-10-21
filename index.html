@@ -18,6 +18,18 @@
     <meta property="og:image" content="./images/image_1780825279152.jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="./images/image_1780825279152.jpeg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC48HE35N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-KC48HE35N7", { send_page_view: false });
+      function sendPageView() {
+        gtag("event", "page_view", { page_title: document.title, page_location: location.href, page_path: location.pathname + location.hash });
+      }
+      window.addEventListener("load", sendPageView);
+      window.addEventListener("hashchange", sendPageView);
+    </script>
     <style>
       .transcript-block details summary strong + span {
         margin-left: 0.35rem;
