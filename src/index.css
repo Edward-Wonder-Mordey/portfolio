@@ -985,3 +985,61 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline
   .values-practice-grid { grid-template-columns: 1fr; }
   .values-practice-grid > div { min-height: auto; }
 }
+
+/* Current focus callout */
+.current-focus-section {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  align-items: center;
+  gap: 34px;
+  margin-top: 34px;
+  padding: 25px 28px;
+  color: #fff;
+  background: var(--navy);
+}
+.focus-kicker {
+  margin: 0 0 8px;
+  color: #e2b15b;
+  text-transform: uppercase;
+  font: 600 9px 'DM Mono', monospace;
+  letter-spacing: .14em;
+}
+.current-focus-section h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(20px, 2.1vw, 27px);
+  letter-spacing: -.03em;
+  line-height: 1.2;
+}
+.current-focus-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.current-focus-list li {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.13);
+  color: #e3e8ed;
+  font-size: 10px;
+  line-height: 1.4;
+}
+@media (max-width: 800px) {
+  .current-focus-section {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 24px;
+    padding: 23px;
+  }
+  .current-focus-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .current-focus-section { padding: 20px 17px; }
+  .current-focus-list { grid-template-columns: 1fr; }
+}
+
