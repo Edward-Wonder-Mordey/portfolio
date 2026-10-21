@@ -299,7 +299,7 @@ function App() {
 
       <section className="contact-section section-wrap" id="contact"><div className="contact-panel"><div className="contact-copy"><p className="eyebrow">06 · Contact</p><h2>Let's build something<br/><em>worth documenting.</em></h2><p>Have a systems challenge, data problem, or thoughtful project in mind? I'd be glad to start a conversation.</p></div><div className="contact-actions"><a className="contact-link" href="./resume.html" target="_blank" rel="noopener noreferrer"><ChevronDown size={17}/> Resume <ArrowUpRight size={16}/></a><a className="contact-link" href="./master-cv.html" target="_blank" rel="noopener noreferrer"><Award size={17}/> Master CV <ArrowUpRight size={16}/></a><a className="contact-link" href="mailto:edwardwondermordey@gmail.com"><Mail size={17}/> Email <ArrowUpRight size={16}/></a><a className="contact-link" href="https://github.com/Edward-Wonder-Mordey" target="_blank" rel="noreferrer"><Github size={17}/> GitHub <ArrowUpRight size={16}/></a><a className="contact-link" href="https://www.linkedin.com/in/edward-wonder-mordey-0532822b7/" target="_blank" rel="noreferrer"><Linkedin size={17}/> LinkedIn <ArrowUpRight size={16}/></a></div></div></section>
     </main>
-    <footer className="site-footer section-wrap"><span>© 2026 Edward Wonder Mordey</span><span>Built with purpose.</span></footer>
+    <footer className="site-footer section-wrap"><span>© 2026 Edward Wonder Mordey</span><span>Built with purpose.</span><span style={{ flexBasis: "100%", textAlign: "center", fontSize: "0.75rem", opacity: 0.8 }}>This site uses Google Analytics to understand aggregate visits and improve the portfolio. You can manage cookies in your browser.</span></footer>
   </div>;
 }
 
