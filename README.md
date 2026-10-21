@@ -155,6 +155,20 @@ Selected political campaign graphics included in the design portfolio are presen
 
 ---
 
+## Owner documentation
+
+The plain-language portfolio website owner's handbook is stored at:
+
+`docs/Edward_Wonder_Mordey_Portfolio_Owners_Handbook.docx`
+
+Regenerate it with:
+
+```bash
+python docs/generate_handbook.py
+```
+
+Update the handbook when the portfolio sections, project evidence, file structure or GitHub Pages deployment process changes.
+
 ## Contact
 
 **Edward Wonder Mordey**
