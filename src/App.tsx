@@ -94,6 +94,9 @@ const ensignSemesters = [
     ['IT340','Business Intelligence Systems','3.00','A','12.00'],
     ['IT497','IT Capstone','1.50','A','6.00'],
   ]],
+  ['2026 · Block 5','8/31/2026 – 10/17/2026','4.000','4.000',[
+    ['IT370','Advanced Linux','3.00','A','12.00'],
+  ]],
 ];
 
 const topUpSemesters = [
